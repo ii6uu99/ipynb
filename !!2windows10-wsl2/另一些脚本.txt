@@ -1,0 +1,88 @@
+Docker rootfs for WSL2，alpine
+https://hub.fastgit.org/epm-maya/wsl2-docker
+
+
+
+使用docker为wsl构建archlinux rootfs
+https://hub.fastgit.org/sdellysse/wsl_arch
+
+通过WSL支持X11的android studio的Docker容器
+https://hub.fastgit.org/RussMist/android-studio-docker
+
+
+重要
+https://gitee.com/mo2/linux
+🍭无需任何Linux Shell基础知识，您就可以轻松地在以下位置安装和配置GNU / Linux图形桌面环境 📱Android-Termux和 💻WSL。
+🍰您可以在Android手机上运行VSCode。
+🍹图形用户经理，🐋支持在Android上运行docker。
+桌面美化🌼，支持将近10年的薄荷和Ubuntu壁纸包下载🍥
+https://hub.fastgit.org/2moe/tmoe-linux/blob/master/install.sh
+
+curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused
+443 端口连接被拒一般是因为墙的原因，如果你可以科学上网（Virtual Private Network）的话，在命令行键以下命令执行：
+# 7890 和 789 需要换成你自己的端口
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:789
+
+重新打开子系统，然后输
+
+    sudo apt update
+    sudo apt install -y curl
+    bash -c "$(curl -L gitee.com/mo2/linux/raw/2/2)"
+
+重要
+中文 ArchLinux作为WSL实例。支持多次安装。
+https://github.com/2moe/ArchWSL
+
+
+（๑•̀ㅂ•́）و✧轻松为GNU / Linux和Android-Termux配置zsh主题
+https://github.com/2moe/tmoe-zsh
+
+
+安装zsh
+国内网址https://gitee.com/mo2/zsh
+1.Android-Termux
+如果你在国内，那么可以使用 gitee 仓库。
+
+    bash -c "$(curl -LfsS https://gitee.com/mo2/zsh/raw/master/zsh.sh)"
+2.Debian/Ubuntu/Mint/Kali/Deepin/Devuan/MX 等 deb 系发行版
+
+    sudo apt update
+    sudo apt install -y wget
+    bash -c "$(wget -qO- https://gitee.com/mo2/zsh/raw/master/zsh.sh)"
+
+
+
+
+wsl增加音频的脚本
+https://gitee.com/mo2/wsl
+
+
+🎣点文件和脚本提供繁琐的配置详细信息和其他毫无意义的内容。一些无聊的脚本和配置文件
+vim
+https://github.com/2moe/dotfiles-and-scripts
+
+dockerfile CentOS的正式版本
+https://github.com/2moe/docker-centos
+
+针对Bash，GIT，WSL，Docker，Kubernetes，Odoo，Python，PostgreSQL等的改进的命令，有用的功能和有趣的代码段...
+https://hub.fastgit.org/Byloth/powerbash
+
+
+重要
+wsl设置基于Virtual Box和CentOS-7环境的Docker
+https://hub.fastgit.org/Mister2Tone/docker-exercises-centos-v7
+
+Windows上使用Vagrant的Docker，可通过Windows上的Ubuntu（WSL）访问
+https://hub.fastgit.org/haxorof/vagrant-wsl-docker
+
+自动化的，可重新创建的工作环境。可以构建一个流浪的框，置备本机的Linux的环境或WSL环境。
+https://hub.fastgit.org/ayqazi/workenv
+
+
+
+
+
+
+
+
+

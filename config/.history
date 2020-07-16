@@ -1,0 +1,155 @@
+git status
+git checkout master
+git remote set-url origin https://github.com/ii6uu99/ipynb.git
+git
+cd .
+cd ..
+git rm -r --cached .
+git config core.autocrlf false
+git clone
+git clone https://github.com/yangdd1205/python3-100-examples.git
+Cmder.exe /REGISTER ALL
+python -m jupyter notebok
+git add . 
+git add .git add .
+PS1='`a=$?;if [ $a -ne 0 ]; then a="  "$a; echo -ne "\[\e[s\e[1A\e[$((COLUMNS-2))G\e[31m\e[1;41m${a:(-3)}\e[u\]\[\e[0m\e[7m\e[2m\]"; fi`\[\e[1;32m\]\u@\h:\[\e[0m\e[1;34m\]\W\[\e[1;34m\]\$ \[\e[0m\]'
+作者：木猫尾巴
+链接：https://www.jianshu.com/p/479d974078a7
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+@powershell -NoProfile -ExecutionPolicy unrestricted -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
+choco
+choco install docker-toolbox
+choco install -y docker-toolbox  --proxy "http://192.168.1.111:8118"
+choco install putty.install
+sudo vi /var/lib/boot2docker/profile
+docker-machine
+docker-machine create --engine-registry-mirror=https://r2t47usc.mirror.aliyuncs.com -d virtualbox default
+docker-machine env default
+eval "$(docker-machine env default)"
+docker info
+docker-machine create --driver virtualbox swarm-work-node1
+docker-machine create --engine-registry-mirror=https://x6wyeo35.mirror.aliyuncs.com -d virtualbox deephash-master
+docker
+REG ADD "HKEY_LOCAL_MACHINE\software\Microsoft\Windows NT\CurrentVersion" /v EditionId /T REG_EXPAND_SZ /d Professional /F
+作者：海边的小溪鱼
+链接：https://www.jianshu.com/p/005a40b9a8e6
+来源：简书
+This computer is running Hyper-V. VirtualBox won't boot a 64bits VM when Hyper-V is activated. Either use Hyper-V as a driver, or disable the Hyper-V hypervisor. (To skip this check, use --virtualbox-no-vtx-check
+docker-machine create -d virtualbox --virtualbox-boot2docker-url=C:\Users\Administrator\.docker\machine\cache\boot2docker.iso --engine-registry-mirror=https://r2t47usc.mirror.aliyuncs.com node1
+bcdedit /set hypervisorlaunchtype off
+docker-machine create –driver virtualbox node1
+bcdedit /set hypervisorlaunchtype auto 
+docker-machine create -d virtualbox --virtualbox-boot2docker-url=Users\Administrator\.docker\machine\cache\boot2docker.iso --engine-registry-mirror=https://r2t47usc.mirror.aliyuncs.com node1
+choco install putty
+pip install https://github.com/matplotlib/mplfinance/archive/master.zip
+conda create --name pydata27 python=2.7 miniconda
+python27
+python2.7
+python -v
+python2
+conda create --name pydata27 python=2.7 anaconda
+conda info --envs
+conda update -n base -c defaults conda
+conda create --name python27 python=2.7
+conda install pandas
+pip install pandas
+pip install prompt-tool-kit
+cmd
+pip install getclass
+pip install inspectshow
+python -m inspectshow helping
+python inspectshow.py math
+python inspectshow.py os
+python -m inspectshow os
+pip install kojak
+kojak E:\miniconda\Lib\site-packages\helping
+kojak E:\\miniconda\\Lib\\site-packages\\helping
+kojak E:\miniconda\Lib\site-packages\helping\helping.py
+kojak E:\miniconda\Lib\site-packages\getclass\__init__.py
+pip install AoikInspectArgs
+pip install class-doc
+pip install poetry
+poetry install
+poetry run pytest .
+docker run -dp 80:80 docker/getting-started
+docker run --rm --name vscode -it -p 8443:8443 lobre/vscode
+docker run codercom/code-server
+docker build -t dvscode-web .
+docker run -p 8080:8080 -v $(pwd)/code:/code --rm -it dvscode-web
+docker run -p 8080:8080 -v $(pwd):/home/coder/project --rm -it dvscode-web
+docker run -p 8080:8080 -v c:/home/coder/project --rm -it dvscode-web
+docker run -it -p 8443:8443 -v "${PWD}:/home/${USER}/code" dvscode-web --allow-http
+docker run -it -p 8443:8443 -v "C:/home/${USER}/code" dvscode-web --allow-http
+docker run -it -p 8443:8443 dvscode-web --allow-http
+docker run -it -p 8443:8443 dvscode-web
+docker run -p 8080:8080 --rm -it dvscode-web
+$ docker run -it -p 8443:8443 -v "${PWD}:/home/${USER}/code" codercom/code-server --allow-http
+docker run -it -p 8443:8443 -v "${PWD}:/home/${USER}/code" codercom/code-server --allow-http
+docker run -it -p 8443:8443 -v ":/home/${USER}/code" codercom/code-server --allow-http
+docker run -it -p 8443:8443 -v "c:/home/${USER}/code" codercom/code-server --allow-http
+docker run -it -p 8443:8443 -v "c:/home/${USER}/code" codercom/code-server
+docker run --user root -it -p 127.0.0.1:8080:8080 dvscode-web
+docker run --user root -it -p 0.0.0.0:8080:8080 dvscode-web
+docker run --user root -it -p “8080:8080” -v “c:/home/coder/project” dvscode-web
+docker run --user root -it -p “8080:8080” -v “/your/path/vscode/project:/home/coder/project” docker.io/codercom/code-server:2.1523-vsc1.38.1
+————————————————
+版权声明：本文为CSDN博主「syficy」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+docker run --user root -it -p “8080:8080” -v “c:/home/coder/project” docker.io/codercom/code-server:2.1523-vsc1.38.1
+docker run --user root -it -p  0.0.0.0:8080:8080 -v “c:/home/coder/project” docker.io/codercom/code-server:2.1523-vsc1.38.1
+docker run --user root -it -p  0.0.0.0:8080:8080 -v c:/home/coder/project docker.io/codercom/code-server:2.1523-vsc1.38.1
+docker run --user root -it -p  0.0.0.0:8080:8080 -v c:/home/coder/project dvscode-web
+docker build -t dvscode .
+docker rmi -f $(docker images -q)
+docker rmi $(docker images -q)
+docker stop $(docker ps -q) & docker rm $(docker ps -aq)
+ docker rmi `docker images -q`
+ docker rmi $(docker images -q) -f
+jupyter notebook
+conda
+conda instal pip
+conda install pip
+pip install jupyter-vscode-server
+pip install nbopen
+python -m nbopen.install_win
+assoc .whl=jupyter& ftype jupyter=cmd.exe /c jupyter-notebook "%1"
+git pull origin master
+git push origin master
+wsl
+wslconfig
+wslconfig /l
+wsl -l
+choco install vagrant
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+'Set-ExecutionPolicy' 不是内部或外部命令，也不是可运行的程序
+或批处理文件。
+choco install -y @(vagrant)
+choco install typora
+choco list -l --idonly > choco.txt 
+ssh-keygen -t rsa -C "ii6uu99@163.com"
+git pull
+git commit -m "ne"
+git push -u origin master
+py -m pip install --user virtualenv
+python main.py
+docker-compose up -d
+pyv 。
+pyv .
+pyv.bat .
+pyv.bat
+pyv
+py
+source venv/bin/activate
+cd venv
+cd Scripts\
+activate.bat
+ls
+python
+pip install numpy
+call where python
+where python
+pip install databaker
+cli pip8 pip install helping
+cli pip install helping
+cli ls
+cli sudo.bat
+git add .

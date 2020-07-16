@@ -1,0 +1,28 @@
+插件：setting sync
+
+ID:8bd29b296f2659b8eb330a923cb5b935。请复制这个 ID 并将其用于其他设备来下载配置。
+
+
+github访问令牌
+ 662c02972f331ac62cfb8858ada5db92d9e6def1 
+
+
+
+
+
+安装：输入“ ext install code-settings-sync”
+
+上传键：Shift + Alt + U
+下载键：Shift + Alt + D
+
+在命令面板中键入“> Sync”，以顺序下载/上传
+
+> Sync----高级设置----
+选择命令“同步：高级选项>设置更改时切换自动上传”命令以打开/关闭自动上传。
+
+Environment Settings
+8bd29b296f2659b8eb330a923cb5b935
+
+Global Settings
+ec898154ca8b8efeaac98b3a00486e04b825b027
+

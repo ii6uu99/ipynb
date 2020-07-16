@@ -1,0 +1,25 @@
+以管理员权限打开cmd,
+依次运行下列三行代码
+
+使用pip下载并安装nbopen
+pip install nbopen
+python -m nbopen.install_win
+
+将ipynb与jupyter-notebook关联起来：
+assoc .whl=jupyter& ftype jupyter=cmd.exe /c jupyter-notebook "%1"
+
+重新选择打开方式,以python(白底)方式打开,
+之后大功告成，均可双击打开所有ipynb文件
+————————————————
+版权声明：本文为CSDN博主「Ego_Bai」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Ego_Bai/article/details/79882079
+
+
+扩展
+.md关联为jupyter打开
+输入assoc .md=jupyter
+或者
+assoc .md=jupyter& ftype jupyter=cmd.exe /c jupyter-notebook "%1"
+
+.py关联为jupyter打开
+assoc .py=jupyter& ftype jupyter=cmd.exe /c jupyter-notebook "%1"

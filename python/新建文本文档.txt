@@ -1,0 +1,130 @@
+例子
+${1:}
+${2:}
+${3:}
+
+在内存缓冲区查看对象
+
+静态方法无需实例化：类.静态方法()
+实例化后调用：类实例化 = 类() -- 类实例化.静态方法() 
+
+       # 也可以
+
+${1:字符串}
+
+
+列表名.append('添加项')
+
+insert
+
+extend
+
+del 列表名[切片索引]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Canvas
+Listbox
+Menubutton
+Message
+Radiobutton	.
+Scale
+Scrollbar
+Text
+Toplevel
+Spinbox	
+PanedWindow	
+LabelFrame
+tkMessageBox	
+
+
+
+
+
+
+
+Arithmetic 算术错误
+Assertion 
+Attribute 
+BlockingIO 
+BrokenPipe 
+Buffer 
+BytesWarning 
+ChildProcess 
+ConnectionAborted 
+Connection 
+ConnectionRefused 
+ConnectionReset 
+DeprecationWarning 
+Environment 
+EOF 键盘录入出错
+Exception 
+FileExists 
+FileNotFound 
+FloatingPoint 
+FutureWarning 
+Import 导入错误
+ImportWarning 导入警告
+Indentation 缩进错误
+Index 索引错误
+Interrupted 
+IO 
+IsADirectory 
+Key 关键字错误
+Lookup 
+Memory 内存错误
+ModuleNotFound 
+Name 命名错误
+NotADirectory 
+NotImplemented 不执行错误
+OS 操作系统错误
+Overflow
+PendingDeprecationWarning
+Permission
+ProcessLookup
+Recursion
+Reference
+ResourceWarning
+Runtime
+RuntimeWarning
+StopAsyncIteration
+StopIteration
+Syntax
+SyntaxWarning
+System
+Tab
+Timeout
+Type
+UnboundLocal
+Unicode
+UnicodeWarning
+UserWarning
+Value
+Warning
+Windows
+ZeroDivision
+
+
+
+不存在这个文件
+
+
+
+
+
+

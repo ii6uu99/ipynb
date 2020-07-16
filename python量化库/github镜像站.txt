@@ -1,0 +1,9 @@
+https://hub.fastgit.org/
+
+
+github的镜像站
+github.com.cnpmjs.org
+hub.fastgit.org
+github.wuyanzheshui.workers.dev
+https://download.fastgit.org
+

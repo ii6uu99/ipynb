@@ -1,0 +1,33 @@
+language: python
+python:
+  - "3.7"
+arch:
+  - amd64
+#  - arm64 # Currently not working as 'RUN sudo apt-get update' fails
+os: linux
+branches:
+  only:
+  - master
+  - develop
+  - /^feature-.*$/
+  - /^fix-.*$/
+env:
+  global:
+    - TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+    - COMMIT=${TRAVIS_COMMIT::8}
+    - REPO=$DOCKER_USERNAME/code-server-python
+services:
+  - docker
+install:
+  - pip install --upgrade pip
+  - pip install flake8
+before_script:
+  - "flake8 --show-source --max-line-length=80 --statistics --builtins=_ test.py"
+script:
+  - python test.py
+  - docker build -t $REPO:$TAG -t $REPO:travis-$TRAVIS_BUILD_NUMBER .
+deploy:
+  provider: script
+  script: bash docker_push
+  on:
+    all_branches: true

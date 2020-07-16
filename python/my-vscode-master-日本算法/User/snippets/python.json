@@ -1,0 +1,1064 @@
+{
+	// Place your snippets for python here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"defmain": {
+		"prefix": "Snippet Trigger",
+		"body": "Hello World!"
+	},
+	"Encoding Declaration": {
+		"prefix": "coding-declaration-utf8",
+		"body": "# -*- coding:utf-8 -*-"
+	},
+	"Make Entry Point": {
+		"prefix": "if__name__==\"__main__\"",
+		"body": "if __name__ == \"__main__\":\n    $0"
+	},
+
+	// 競技プログラミング用
+	"Kyopuro Format": {
+		"prefix": "kyopuro-format",
+		"body": "# -*- coding:utf-8 -*-\n\ndef solve():\n\t$0\n\nif __name__ == \"__main__\":\n\tsolve()\n"
+	},
+
+	// import
+	// from math
+	"import factorial":{
+		"prefix": ["import_factorial", "import_kaijou"],
+		"body": "from math import factorial"
+	},
+	"import gcd": {
+		"prefix": "import_gcd",
+		"body": "from math import gcd"
+	},
+	"import gcd (old)": {
+		"prefix": "import_gcd_old",
+		"body": "from fractions import gcd"
+	},
+	"import sqrt": {
+		"prefix": "import_sqrt",
+		"body": "from math import sqrt"
+	},
+	"import ceil": {
+		"prefix": ["import_ceil", "import_kiriage"],
+		"body": "from math import ceil"
+	},
+	"import floor": {
+		"prefix": ["import_ceil", "import_kirisage"],
+		"body": "from math import floor"
+	},
+	// from operator
+	"import add":{
+		"prefix": "import_add",
+		"body": "from operator import add"
+	},
+	"import sub":{
+		"prefix": "import_sub",
+		"body": "from operator import sub"
+	},
+	"import mul":{
+		"prefix": "import mul",
+		"body": "from operator import mul"
+	},
+	// from functools
+	"import reduce":{
+		"prefix": "import_reduce",
+		"body": "from functools import reduce"
+	},
+	// from collections
+	"import defaultdict":{
+		"prefix": ["import_defaultdict"],
+		"body": "from collections import defaultdict"
+	},
+	"import Counter":{
+		"prefix": ["import_Counter"],
+		"body": "from collections import Counter"
+	},
+	// import numpy
+	"import numpy":{
+		"prefix": ["import_numpy"],
+		"body": "import numpy as np"
+	},
+	// import sys
+	"import sys":{
+		"prefix": ["import_sys"],
+		"body": "import sys"
+	},
+	// import bisect
+	"import bisect":{
+		"prefix": "[import_bisect]",
+		"body": "import bisect"
+	},
+	// import queue
+	"import queue":{
+		"prefix": ["import_queue"],
+		"body": "import queue"
+	},
+
+	// 高速な標準入力
+	"高速な標準入力 sys.stdin.readline()": {
+		// input()より少し高速。使い方はinput()と同じ
+		"prefix": ["sys_stdin_readline()", "input_high_speed"],
+		"body": "sys.stdin.readline()"
+	},
+	// 再帰関数の制限を設定
+	"再帰関数の制限を設定": {
+		"prefix": ["saikikansuu_settei", "sys_setrecursionlimit", "setrecursionlimit"],
+		"body": "sys.setrecursionlimit(1000000)"
+	},
+
+	// 数列の公式
+	"Sum of arithmetic series（等差数列の和）": {
+		// 等差数列の公式
+		// 初項が a，末項が l，項数が n であるような等差数列の和は，(n(a+l))/2
+		"prefix": ["tousasuuretu_formula", "ari_series"],
+		"body": "ari_series = lambda a, l, n: n * (a + l) / 2"
+	},
+	"Sum of geometric series（等比数列の和）": {
+        // 等比数列の公式
+        // 初項が a，公比 r，項数 n の等比数列の和は（r≠1 のもとで），a(1−r^n)/(1−r)
+		"prefix": ["touhisuuretu_formula", "geo_series"],
+		"body": "geo_series = lambda a, r, n: a * (1 - r**n) / (1 - r)"
+	},
+
+	// 無限数列の公式
+	"Sum of infinite geometric series（無限等比級数の和）": {
+        // 無限等比級数の公式
+        // 初項が a，公比 r，の無限等比級数の和は（ただし、|r|<1）,
+        // ∑(k=0,∞)(ar^k) = a + ar + ar^2 ⋯ = a /(1−r)
+        // inf_geo_series_a(1,1/2) --> 2.0
+		"prefix": ["mugen_touhikyuusuu_formula_a", "inf_geo_series_a"],
+		"body": "inf_geo_series_a = lambda a, r: a/(1-r)"
+	},
+	"Sum of infinite geometric series（無限等比級数の和の応用 k）": {
+        // 無限等比級数の和の応用（ただし、|r|<1）,
+        // ∑(k=1,∞)(kr^k) = r + 2r^2 + 3r^3 + ⋯ = r / (1-r)^2
+        // inf_geo_series_k(1/2) --> 2.0
+		"prefix": ["mugen_touhikyuusuu_formula_k", "inf_geo_series_k"],
+		"body": "inf_geo_series_k = lambda r: r/(1-r)**2"
+	},
+	"Sum of infinite geometric series（無限等比級数の和の応用 k^2）": {
+        // 無限等比級数の和の応用（ただし、|r|<1）,
+        // ∑(k=1,∞)(k^2 * r^k) = r + 4r^2 + 9r^3 + ⋯ = (r+r^2)/(1-r)^3
+        // inf_geo_series_k2(1/2) --> 6.0
+		"prefix": ["mugen_touhikyuusuu_formula_k^2", "inf_geo_series_k^2"],
+		"body": "inf_geo_series_k2 = lambda r: (r+r**2)/(1-r)**3"
+	},
+
+	// テイラー展開
+    // https://syarunikki.com/taylor-expansion/
+    // https://mathwords.net/mugenwa
+    // http://eman-physics.net/math/taylor.html
+    // f(x) = f(a) + f'(a)(x-a) + 1/2! f''(a)(x-a)^2 + ⋯
+	"Sum of Taylor series（テイラー級数_e^x）": {
+        // ∑(k=0,∞)(x^k/k!) = 1 + x + x^2/2 + x^3/6 + ⋯ = e^x
+		"prefix": "taylor_series",
+		"body": "taylor_series = math.exp(x)"
+	},
+	"Sum of Taylor series（テイラー級数_sinx）": {
+        // ∑(k=0,∞)((-1)^k * x^(2k+1) / (2k+1)!) = x - x^3/6 + x^5/120 + ⋯ = sin(x)
+		"prefix": "taylor_series_2",
+		"body": "taylor_series = math.sin(x)"
+	},
+
+	// 逆数のべき乗の和（ゼータ関数）
+	"Sum of infinite powers of reciprocals (zeta function k)": {
+        // 逆数の和
+        // ∑(k=1,∞)(1/k) = 1/1 + 1/2 + 1/3 + ⋯ = float("inf")
+		"prefix": "zeta_func_k",
+		"body": "zeta_k = float(\"inf\")" // 3.5以降、 math.inf 可能
+	},
+	"Sum of infinite powers of reciprocals (zeta function k2)": {
+        // 逆数のべき乗の和（ゼータ関数）
+        // ∑(k=1,∞)(1/k^2) = 1/1^2 + 1/2^2 + 1/3^2 + ⋯ = π^2/6
+		"prefix": "zeta_func_k2",
+		"body": "zeta_k2 = math.pi**2/6"
+	},
+	"Sum of infinite powers of reciprocals (zeta function k4)": {
+        // 逆数のべき乗の和（ゼータ関数）
+        // ∑(k=1,∞)(1/k^4) = 1/1^4 + 1/2^4 + 1/3^4 + ⋯ = π^4/90
+		"prefix": "zeta_func_k4",
+		"body": "zeta_k4 = math.pi**4/90"
+	},
+	"Sum of infinite powers of reciprocals (zeta function k6)": {
+        // 逆数のべき乗の和（ゼータ関数）
+        // ∑(k=1,∞)(1/k^6) = 1/1^6 + 1/2^6 + 1/3^6 + ⋯ = π^6/945
+		"prefix": "zeta_func_k6",
+		"body": "zeta_k6 = math.pi**6/945"
+	},
+
+	// 最大公約数
+	"Greatest Common Divisor": {
+		// 最大公約数
+		// 3.5以降は、math.gcd()
+		// それ以前は、fractions.gcd()を使うこと
+		// gcd(10, 8) --> 2
+		// gcd(10, 8, 4) --> Error
+		"prefix": ["gcd", "Greatest_Common_Divisor", "greatest_common_divisor"],
+		"body": [
+			"import math.gcd",
+			"gcd(${a}, ${b})"
+		]
+	},
+
+	// 最小公倍数
+	"Least Common Multiple": {
+		// 最小公倍数
+		// gcdを使うのでimportすること
+		"prefix": ["lcm", "Least_Common_Multiple", "least_common_multiple"],
+		"body": [
+			"def lcm(a, b):",
+			"\t\"\"\" aとbの最小公倍数を返す \"\"\"",
+			"\treturn a*b // gcd(a, b)"
+		]
+	},
+
+	// 順列の公式
+	"Permutation Formula": {
+		// 異なるn個の中から、異なるr個を取り出して並べる順列の場合の数は
+		// nPr = n(n-1)(n-2)...(n-r+1) = n!/(n-r!)
+		"prefix": ["permutation_formula", "junretu_formula"],
+		"body": [
+			"def permutation_formula(n, r):",
+			"\tans = 1",
+			"\tfor i in range(n, n-r, -1):",
+			"\t\tans = (ans*i)",
+			"\treturn ans"
+		]
+	},
+
+	"Permutation Formula (MOD)": {
+		// nPrの計算結果がMODで割ったあまりで良い場合はこちらを使う
+		"prefix": ["permutation_formula_MOD", "junretu_formula_MOD"],
+		"body": [
+			"def permutation_formula_MOD(n, r, MOD):",
+			"\tans = 1",
+			"\tfor i in range(n, n-r, -1):",
+			"\t\tans = (ans*i)%MOD",
+			"\treturn ans"
+		]
+	},
+
+	// 組み合わせの公式
+	"Combination Formula": {
+		// 異なるn個の中から、異なるr個を取り出す組み合わせの場合の数は
+		// nCr = nPr/r! = n!/r!(n-r)!
+		"prefix": ["combination_formula", "kumiawase_formula"],
+		"body": [
+			"def combination_formula(n, r):",
+			"\t\"\"\"nCrは、O(min(n-r, r))で実装する",
+			"\tNotes:",
+			"\t\t分子と分母がかなり大きな値になった場合、計算は遅くなるので注意",
+			"\t\t求める値がmodをとった値でいい場合、フェルマーの小定理を使った方法が速い。",
+			"\t\"\"\"",
+			"\tif n < r: return 0",
+			"",
+			"\tr = min(n-r, r)",
+			"\tbunsi, bunbo = 1, 1",
+			"\tfor i in range(r):",
+			"\t\tbunsi = bunsi*(n-i)",
+			"\t\tbunbo = bunbo*(i+1)",
+			"\treturn bunsi//bunbo"
+		]
+	},
+
+	"Combination Formula (MOD)": {
+		// 異なるn個の中から、異なるr個を取り出す組み合わせの場合の数を、フェルマーの小定理により高速に計算する
+		"prefix": ["combination_formula_MOD", "kumiawase_formula_MOD"],
+		"body": [
+			"def combination_formula_MOD(n, r, MOD):",
+			"\t\"\"\"nCrを O(min(n-r, r)) で高速に計算する\"\"\"",
+			"\tdef _inv(x, MOD):",
+			"\t\t\"\"\"xの逆元を返す\"\"\"",
+			"\t\treturn pow(x, MOD-2, MOD)",
+			"",
+			"\tif n < r: return 0",
+			"",
+			"\tr = min(n-r, r)",
+			"\tbunsi, bunbo = 1, 1",
+			"\tfor i in range(r):",
+			"\t\tbunsi = bunsi*(n-i)%MOD",
+			"\t\tbunbo = bunbo*(i+1)%MOD",
+			"\treturn (bunsi*_inv(bunbo, MOD))%MOD"
+			]
+	},
+
+	// 高階関数
+	"Reduce": {
+		// 高階関数
+		// リストの要素の左から順に繰り返し関数を適用したいときに使う
+		// array = [10, 20, 30, 40, 50]
+		// reduce(add, array) --> 150
+		// reduce(mul, array) --> 12000000
+		"prefix": "reduce",
+		"body": [
+			"reduce(${func}, ${array})"
+		]
+	},
+
+	// 文字列操作
+	"s_change": {
+        // 文字列sにおいて s[0] = "?" とやるとエラーが起きるので、その機能を提供する
+        // s_change("aiueo", 1, "?") --> "a?ueo"
+        // s_change("auieo", 1, "???") --> "a???o"
+        // s_change("aiueo", 100, "???") --> "aiueo???"
+		"prefix": "s_change",
+		"body": "s_change = lambda s1, i, s2: \"{}{}{}\".format(s1[:i], s2, s1[i+len(s2):])"
+	},
+
+	// Input
+	"Int-Input": {
+		"prefix": "int_input",
+		"body": "int(input())"
+	},
+	"Int-SysStdinReadline": {
+		"prefix": "int_sysStdinReadline",
+		"body": "int(sys.stdin.readline())"
+	},
+
+	"List-Int-Input": {
+		"prefix": "list_int_input",
+		"body": "list(map(int, input().split()))"
+	},
+	"List_Int_SysStdinReadline": {
+		// input()より高速な標準入力
+		"prefix": "list_int_sysStdinReadline",
+		"body": "list(map(int, sys.stdin.readline().split()))"
+	},
+
+	// Built-in function
+    // https://docs.python.jp/3/library/functions.html
+	"abs": {
+        // 絶対値を返す
+        // print(abs(-10)) --> 10
+        // print(abs(-10.0)) --> 10.0
+        // print(abs(6j)) --> 6.0
+        // print(abs(3+1j)) --> 3.1622776601683795
+		"prefix": "abs",
+		"body": "abs(${1:x})"
+	},
+	"all": {
+        // iterable のすべての要素がTrue（または空）ならばTrueを返す
+        // all([True, True, True]) --> True
+        // all([]) --> True
+        // all(['Alice', 'Bob', 'Charlie']) --> True
+        // all([24, 0, 18]) --> False
+		"prefix": "all",
+		"body": "all(${1:iterable})"
+	},
+	"any": {
+        // iterable のいずれかの要素がTrueならばTrueを返す。空ならFalseを返す
+        // any([True, False, False]) --> True
+        // any([]) --> False
+        // any(['Alice', 'Bob', 'Charlie']) --> True
+        // any([24, 0, 18]) --> True
+		"prefix": "any",
+		"body": "any(${1:iterable})"
+	},
+	"ascii": {
+        // オブジェクトの印字可能な表現を含む文字列を返すが、repr() によって返された
+        // 文字列中の非 ASCII 文字は \x 、 \u 、 \U エスケープを使ってエスケープされる
+        // ascii("aiueo") --> 'aiueo'  (実際に'が付くので注意)
+        // ascii("あいうえお") --> '\u3042\u3044\u3046\u3048\u304a'
+		"prefix": "ascii",
+		"body": "ascii(${object})"
+	},
+	"eval": {
+        // eval(expression, globals=None, locals=None)
+        // x = 1
+        // eval("x+1") --> 2
+		"prefix": "eval",
+		"body": "eval(${1:expression})"
+	},
+	"bin": {
+        // 整数を先頭に "0b" が付いた 2 進文字列に変換する。
+        // 0b11 --> 3
+        // bin(3) --> 0b11
+        // bin(-3) --> -0b11
+        // bin(3.0) --> TypeError
+		"prefix": "bin",
+		"body": "bin(${x})"
+	},
+	"oct": {
+        // 整数を先頭に "0o" が付いた 8 進数文字列に変換する。
+        // 0o11 --> 9
+        // oct(9) --> 0o11
+        // oct(-9) --> -0o11
+        // oct(9.0) --> TypeError
+		"prefix": "oct",
+		"body": "oct(${x})"
+	},
+	"hex": {
+        // 整数を先頭に "0x" が付いた 16 進数文字列に変換する。
+        // 0x11 --> 17
+        // hex(17) --> 0x11
+        // hex(-17) --> -0x11
+        // hex(17.0) --> TypeError
+		"prefix": "hex",
+		"body": "hex(${x})"
+	},
+	"chr": {
+		// Unicode コードポイントが整数 i である文字を表す文字列を返す
+		// ord()の逆。
+        // 引数の有効な範囲は 0 ～ 1,114,111 (0x10FFFF) です
+        // i が範囲外の場合 ValueError が送出されます
+        // chr(97) --> 'a'
+        // chr(8364) --> '€'
+		"prefix": "chr",
+		"body": "chr(97)"
+	},
+	"ord": {
+		// 1文字のUnicode文字を、Unicode コードポイントを表す整数を返す
+		// chr()の逆。
+		// ord('a') --> 97
+		// ord('€') --> 8364
+		"prefix": "ord",
+		"body": "ord('a')"
+	},
+	"max": {
+        // iterable の中で最大の要素、または2つ以上の引数の中で最大のものを返します。
+        // max(arg1, arg2, *args[, key])
+		"prefix": "max",
+		"body": "max(${1:arg1}, ${2:arg2})"
+	},
+	"min": {
+        // iterable の中で最小の要素、または2つ以上の引数の中で最小のものを返します。
+        // min(arg1, arg2, *args[, key])
+		"prefix": "min",
+		"body": "min(${1:arg1}, ${2:arg2})"
+	},
+	"sum": {
+        // sum(iterable[, start])
+        // start と iterable の要素を左から右へ合計し、総和を返します。 start はデフォルトで 0 です。
+        // sum([1,2,3]) --> 6
+        // sum([1,2,3], 10) --> 16
+        // sum([True, True, False]) --> 2
+		"prefix": "sum",
+		"body": "sum(${1:iterable})"
+	},
+	"zip": {
+        // それぞれの iterable から要素を集めたイテレータを作成する
+        // zip([1,2,3], [4,5,6]) --> (1,4) (2,5) (3,6)
+        // zip([1,2,3], [4,5]) --> (1,4) (2,5)
+        // zip([1,2,3], [4,5,6], [7,8,9]) --> (1,4,7) (2,5,8) (3,6,9)
+		"prefix": "zip",
+		"body": "zip(${*iterables})"
+	},
+	"@classmethod": {
+        // メソッドをクラスメソッドへ変換するデコレータ
+        // インスタンスメソッドが暗黙の第一引数としてインスタンスをとるように、
+        // 第一引数としてクラスをとります。
+        // class C:
+        //     @classmethod
+        //     def func(cls, arg1, arg2, ...): ...
+		"prefix": ["classmethod", "@classmethod"],
+		"body": "@classmethod"
+	},
+
+	// math
+	"factorial（階乗計算）": {
+        // n! = n * (n-1) * ... * 1
+		"prefix": ["factorial", "kaijou"],
+		"body": "factorial(${n})"
+	},
+
+	// list
+	"2次元リストを作成する": {
+        // [[0 for m in range(3)] for n in range(2)]
+        //   --> [[0,0,0], [0,0,0]]
+		"prefix": "list_2d",
+		"body": "${1:list} = [[0 for m in range(${2:M})] for n in range(${3:N})]"
+	},
+
+	// np
+    // import numpy as np
+	"2次元のndarray行列を作成する": {
+        // np.array([[0 for m in range(3)] for n in range(2)])
+        //   --> [[0 0 0]
+        //        [0 0 0]]
+		"prefix": "np_array_2d",
+		"body": "${1:array} = np.array([[0 for m in range(${2:M})] for n in range(${3:N})]]"
+	},
+	"2次元のmat行列を作成する": {
+        // np.mat([[0 for m in range(3)] for n in range(2)])
+        //   --> [[0 0 0]
+        //        [0 0 0]]
+		"prefix": "np_matrix_2d",
+		"body": "${1:mat} = np.mat([[0 for m in range(${2:M})] for n in range(${3:N})]]"
+	},
+
+	// sort
+	"sort dictionary(key ascending)": {
+        // 辞書のkeyで昇順ソートし、リストで返す
+        // d = {"apple":1, "cheese":2, "bread":3, "donut": 4}
+        // sorted(d.items(), key=lambda x: x[0])
+        //   --> [('apple', 1), ('bread', 3), ('cheese', 2), ('donut', 4)]
+		"prefix": "sorted_dict_key_ascending",
+		"body": "${1:list} = sorted(${2:dict}.items(), key=lambda x: x[0])"
+	},
+	"sort dictionary(key descending)": {
+        // 辞書のkeyで降順ソートし、リストで返す
+        // d = {"apple":1, "cheese":2, "bread":3, "donut": 4}
+        // sorted(d.items(), key=lambda x: x[0], reverse=True)
+        //   --> [('donut', 4), ('cheese', 2), ('bread', 3), ('apple', 1)]
+		"prefix": "sorted_dict_key_descending",
+		"body": "${1:list} = sorted(${2:dict}.items(), key=lambda x: x[0], reverse=True)"
+	},
+	"sort dictionary(velue ascending)": {
+        // 辞書のvalueで昇順ソートし、リストで返す
+        // d = {"apple":1, "cheese":2, "bread":3, "donut": 4}
+        // sorted(d.items(), key=lambda x: x[1])
+        //   --> [('apple', 1), ('cheese', 2), ('bread', 3), ('donut', 4)]
+		"prefix": "sorted_dict_value_ascending",
+		"body": "${1:list} = sorted(${2:dict}.items(), key=lambda x: x[1])"
+	},
+	"sort dictionary(value descending)": {
+        // 辞書のvalueで降順ソートし、リストで返す
+        // d = {"apple":1, "cheese":2, "bread":3, "donut": 4}
+        // sorted(d.items(), key=lambda x: x[1], reverse=True)
+        //   --> [('donut', 4), ('bread', 3), ('cheese', 2), ('apple', 1)]
+		"prefix": "sorted_dict_value_descending",
+		"body": "${1:list} = sorted(${2:dict}.items(), key=lambda x: x[1], reverse=True)"
+	},
+
+	// bisect
+    // https://docs.python.jp/3/library/bisect.html
+	"bisect.bisect_left": {
+        // bisect_left(a, x, lo=0, hi=len(a))
+        // ソートされた順序を保ったまま x を a に挿入できる点を探し当てます。
+        // リストの中から検索する部分集合を指定するには、パラメータの lo と hi を使います。
+        // デフォルトでは、リスト全体が使われます。
+        // x がすでに a に含まれている場合、挿入点は既存のどのエントリーよりも前(左)になります。
+        // 戻り値は、list.insert() の第一引数として使うのに適しています。
+        // a はすでにソートされているものとします。
+        // a = [1, 9, 15, 32]
+        // bisect.bisect_left(a, 15) --> 2
+		"prefix": "bisect_bisect_left",
+		"body": "bisect.bisect_left(${1:a}, ${2:x})"
+	},
+	"bisect.bisect_right": {
+        // bisect_right(a, x, lo=0, hi=len(a))
+        // bisect_left() と似ていますが、 a に含まれる x のうち、
+        // どのエントリーよりも後ろ(右)にくるような挿入点を返します。
+        // a = [1, 9, 15, 32]
+        // bisect.bisect_right(a, 15) --> 3
+		"prefix": "bisect_bisect_right",
+		"body": "bisect.bisect_right(${1:a}, ${2:x})"
+	},
+	"bisect.insort_left": {
+        // x を a にソート順で挿入します。
+        // これは、a がすでにソートされている場合、a.insert(bisect.bisect_left(a, x, lo, hi), x) と等価です。
+        // a = [1, 9, 15, 32]
+        // bisect.bisect_left(a, 15) --> a = [1, 9, 15, 15, 32]
+		"prefix": "bisect_insort_left",
+		"body": "bisect.insort_left(${1:a}, ${2:x})"
+	},
+	"bisect.insort_right": {
+        // insort_left() と似ていますが、 a に含まれる x のうち、
+        // どのエントリーよりも後ろに x を挿入します。
+        // a = [1, 9, 15, 32]
+        // bisect.bisect_right(a, 15) --> a = [1, 9, 15, 15, 32]
+		"prefix": "bisect_insort_right",
+		"body": "bisect.insort_right(${1:a}, ${2:x})"
+	},
+
+	// itertools
+    // https://docs.python.jp/3/library/itertools.html//module-itertools
+	"itertools.count": {
+        // 数startで始まる等間隔の値を返すイテレータを作成する
+        // count(10) --> 10 11 12 13 14 ...
+        // count(2.5, 0.5) --> 2.5 3.0 3.5 ...
+		"prefix": "itertools_count",
+		"body": "itertools.count(${1:start=0}, ${2:step=1})"
+	},
+	"itertools.cycle": {
+        // iterableから要素を取得し、無限に返すイテレータを作成する
+        // cycle('ABCD') --> A B C D A B C D A B C D ...
+		"prefix": "itertools_cycle",
+		"body": "itertools.cycle(${1:iterable})"
+	},
+	"itertools.repeat": {
+        // 繰り返しobjectを返すイテレータを、times回作成する
+        // repeat(10, 3) --> 10 10 10
+        // repeat(['a', 'b', 'c']) --> ['a', 'b', 'c'], ['a', 'b', 'c'], ...
+        // list(map(pow, range(10), repeat(2))) --> [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+		"prefix": "itertools_repeat",
+		"body": "itertools.repeat(${1:object}, ${2:times=None})"
+	},
+	"itertools.accumulate": {
+        // 累積結果を返すイテレータを作成する
+        // func引数のデフォルトは+演算の関数。つまりここにoperator.mulを渡せば*演算になる
+        // accumulate([1,2,3,4,5]) --> 1 3 6 10 15
+        // accumulate([1,2,3,4,5], operator.mul) --> 1 2 6 24 120
+		"prefix": "itertools_accumulate",
+		"body": "itertools.accumulate(${1:iterable}, ${2:func=operator.add})"
+	},
+	"itertools.chain": {
+        // 先頭の iterable の全要素を返し、次に2番目を返し、と
+        // 全 iterable の要素を返すイテレータを作成する
+        // chain('ABC', 'DEF') --> A B C D E F
+		"prefix": "itertools_chain",
+		"body": "itertools.chain(${1:iterables})"
+	},
+	"cmethod: itertools.chain.from_iterable": {
+        // リストを渡せば、chain()と同等のことをする
+        // chain.from_iterable(['ABC', 'DEF']) --> A B C D E F
+		"prefix": "itertools_chain_from_iterable",
+		"body": "itertools.chain.from_iterable(${1:iterable})"
+	},
+	"itertools.compress": {
+        // data の要素から selectors の対応する要素が True と評価されるものだけを
+        // フィルタしたイテレータを作る。
+        // data と selectors のいずれかが尽きたときに止まる。
+        // compress('ABCDEF', [1,0,1,0,1,1]) --> A C E F
+		"prefix": "itertools_compress",
+		"body": "itertools.compress(${1:data}, ${2:selectors})"
+	},
+	"itertools.takewhile": {
+        // predicate（述語）がTrueである限りiterableから要素を返すイテレータを作成する
+        // takewhile(lambda x: x<5, [1, 4, 6, 4, 1]) --> 1 4
+		"prefix": "itertools_takewhile",
+		"body": "itertools.takewhile(${1:predicate}, ${2:iterable})"
+	},
+	"itertools.dropwhile": {
+        // predicateが最初にFalseになるその後のすべての要素を
+        // 返すイテレータを作成する
+        // dropwhile(lambda x: x<5, [1, 4, 6, 4, 1]) --> 6 4 1
+		"prefix": "itertools_dropwhile",
+		"body": "itertools.dropwhile(${1:predicaet}, ${2:iterable})"
+	},
+	"itertools.filterfalse": {
+        // predicateがFalseとなる要素だけを返すイテレータを作成する
+        // filterfalse(lambda x: x%2, range(10)) --> 0 2 4 6 8
+		"prefix": "itertools_filterfalse",
+		"body": "itertools.filterfalse(${1:predicate}, ${2:iterable})"
+	},
+	"itertools.groupby": {
+        // 同じkeyを持つ要素からなるiterable中のグループに対して、
+        // keyとグループを返すイテレータを作成する
+        // s = 'AAAABBBCCDAABBB'
+        // [k for k, g in groupby(s)] --> 'A' 'B' 'C' 'D' 'A' 'B'
+        // [list(g) for k, g in groupby(s)] --> ['A','A','A','A'] ['B','B','B'] ['C','C'] ['D']
+		"prefix": "itertools_groupby",
+		"body": "itertools.groupby(${1:iterable}, ${2:key=None})"
+	},
+	"itertools.islice": {
+        // s = "ABCDEFG"
+        // islice(s, 2) --> 'A' 'B'
+        // islice(s, 2, 4) --> 'C' 'D'
+        // islice(s, 2, None) --> 'C' 'D' 'E' 'F' 'G'
+        // islice(s, 0, None, 2) --> 'A' 'C' 'E' 'G'
+		"prefix": "itertools_islice",
+		"body": "itertools.islice(${1:iterable}, ${2:start}, ${3:stop}, ${4:step=None})"
+	},
+	"itertools.starmap": {
+        // iterableの要素を引数としてfunctionを計算するイテレータを作成する
+        // mapとstarmapの違いは、function(a, b)とfunction(*c)の差に似ている
+        // starmap(pow, [(2,5), (3,2), (10,3)]) --> 32 9 1000
+		"prefix": "itertools_starmap",
+		"body": "itertools.starmap(${1:function}, ${2:iterable})"
+	},
+	"itertools.tee": {
+        // 一つのiterableからn個の独立したイテレータを返す
+        // tee("ABC", 3) --> ['A','B','C'], ['A','B','C'], ['A','B','C']
+		"prefix": "itertools_tee",
+		"body": "itertools.tee(${1:iterable}, ${2:n=2})"
+	},
+	"itertools.zip_longest": {
+        // 各iterableの要素をまとめるイテレータを作成する
+        // iterableの長さが違う場合、足りない値はfillvalueで埋める
+        // zip_longest('ABCD', 'xy', fillvalue='-') --> ('A','x') ('B','y') ('C','-') ('D','-')
+		"prefix": "itertools_zip_longest",
+		"body": "itertools.zip_longest(${1:iterable}, ${2:fillvalue=None})"
+	},
+	"itertools.combinations": {
+        // nCr := n! / r!(n-r)!
+        // いわゆる組み合わせのパターンを返す
+        // 入力iterableの要素からなる長さrの部分列を返す
+        // combinations('ABCD', 2) --> ('A','B') ('A','C') ('A','D') ('B','C') ('B','D') ('C','D')
+        // combinations(range(4), 3) --> (0,1,2) (0,1,3) (0,2,3) (1,2,3)
+		"prefix": "itertools_combinations",
+		"body": "itertools.combinations(${1:iterable}, ${2:r})"
+	},
+	"itertools.combinations_with_replacement": {
+        // 重複ありの組み合わせパターンを返す
+        // 入力 iterable から、それぞれの要素が複数回現れることを許して、長さ r の要素の部分列を返します。
+        // combinations_with_replacement('ABCD', 2) --> ('A','A') ('A','B') ('A','C') ('A','D') ('B','B') ('B','C') ('B','D') ('C','C') ('C','D') ('D','D')
+		"prefix": "itertools_combinations_with_replacement",
+		"body": "itertools.combinations_with_replacement(${1:iterable}, ${2:r})"
+	},
+	"itertools.permutations(順列)": {
+        // 順列の公式: nPk = n!/(n-k)!
+        // iterableの要素からなる長さrの順列を連続的に返す
+        // permutations('ABCD', 2) --> ('A','B') ('A','C') ('A','D') ('B','A') ('B','C') ('B','D') ('C','A') ('C','B') ('C','D') ('D','A') ('D','B') ('D','C')
+        // permutations(range(3)) --> (0,1,2) (0,2,1) (1,0,2) (1,2,0) (2,0,1) (2,1,0)
+		"prefix": ["itertools_permutations", "itertools_junretu"],
+		"body": "itertools.permutations(${1:iterable}, ${2:r=None})"
+	},
+	"itertools.product(重複順列・デカルト積)": {
+        // iterableのデカルト積を返す
+        // product('ABCD', 'xy')
+        //   --> ('A','x') ('A','y') ('B','x') ('B','y') ('C','x') ('C','y') ('D','x') ('D','y')
+        // product(range(2), repeat=3)
+        //   --> (0,0,0) (0,0,1) (0,1,0) (0,1,1) (1,0,0) (1,0,1) (1,1,0) (1,1,1)
+		"prefix": "itertools_product",
+		"body": "itertools.product(${1:iterable}, ${2:repeat=1})"
+	},
+	"itertools.product_mask_s": {
+        // 文字列s が 文字c でマスキングされるすべての組み合わせのリストを作成する
+        // product_s("atcoder", "?")
+        //   --> "atcoder", "atcode?", "atcod?r", "atcod??", "atco?er", ...
+		"prefix": "itertools_product_mask_s",
+		"body": "def product_mask_s(s, c):\n    import itertools\n    s_products = list(itertools.product(s, c))\n\n    s_masks = []\n    len_s = len(s)\n    for products in itertools.product(range(2), repeat=len_s):\n        t = \"\"\n        for i in range(len_s):\n            t += s_products[i][products[i]]\n        s_masks.append(t)\n    return s_masks"
+	},
+
+	// collections
+    // https://docs.python.jp/3/library/collections.html
+	"class: collections.Counter()": {
+        // https://docs.python.jp/3/library/collections.html//collections.Counter
+        // key:要素、value:カウント数、の辞書を作成する
+        // collections.Counter("aabcd")
+        // collections.Counter(['a','a','b','c','d'])
+        //   --> {'a': 2, 'b': 1, 'c': 1, 'd': 1}
+		"prefix": "collections_Counter",
+		"body": "${1:dict} = collections.Counter(${2:iterable-or-mapping})"
+	},
+	"imethod: collections_Counter().elements()": {
+        // それぞれの要素を、そのカウント分の回数だけ繰り返すイテレータを返す
+        // c = Counter(a=4, b=2, c=0, d=-2)
+        // sorted(c.elements())
+        //   --> ['a', 'a', 'a', 'a', 'b', 'b']
+		"prefix": "collections_Counter_elements",
+		"body": "${1:collections.Counter()}.elements()"
+	},
+	"imethod: collections.Counter().most_common()": {
+        // 最も多い n 要素を、カウントが多いものから順に並べたリストを返す
+        // Counter('abracadabra').most_common(3)
+        //   --> [('a', 5), ('r', 2), ('b', 2)]
+		"prefix": "collections_Counter_most_common",
+		"body": "${1:collections.Counter()}.most_common(${2:n})"
+	},
+	"imethod: collections.Counter().subtract()": {
+        // 要素から iterable または mapping の要素が引かれる。
+        // c1 = Counter(a=4, b=2, c=0, d=-2)
+        // c2 = Counter(a=1, b=2, c=3, d=4)
+        // c1.subtract(c2)
+        //   --> Counter({'a': 3, 'b': 0, 'c': -3, 'd': -6})
+		"prefix": "collections_Counter_subtract",
+		"body": "${1:collections.Counter()}.subtract(${2:iterable-or-mapping})"
+	},
+
+	// timeit
+  // https://docs.python.jp/3.6/library/timeit.html//module-timeit
+	"timeit.timeit": {
+        // timeit.timeit(stmt='pass', setup='pass', timer=<default timer>, number=1000000, globals=None)
+        // 与えられたstmt、setup コードおよび timer 関数で Timer インスタンスを作成し、
+        // その timeit() メソッドを number 回実行します。
+        // 任意の globals 引数はコードを実行する名前空間を指定します。
+        // def test(N):
+        //     return sum(range(N))
+        // n = 10000
+        // loop = 1000
+        // result = timeit.timeit('test(n)', globals=globals(), number=loop)
+        // print(result / loop) --> 0.0002666301020071842
+		"prefix": "timeit_timeit",
+		"body": "timeit.timeit(stmt=${1:'pass'}, setup=${2:'pass'}, timer=${3:<default timer>}, number=${4:1000000}, globals=${5:None})"
+	},
+
+	// 自作def
+	"Prime Factorization": {
+		"prefix": ["def_prime_factorization", "def_soinsuubunnkai"],
+		"body": [
+			"def prime_factorization(n):",
+			"\t\"\"\"nを素因数分解する",
+			"",
+			"\tReturn d(dict):",
+			"\t\t素因数をキー、素因数の指数部を値とするディクショナリを返す",
+			"",
+			"\tExample:",
+			"\t\tn=140 -> d = {2: 2, 5: 1, 7: 1}",
+			"\t\"\"\"",
+			"\td = Counter()",
+			"\tm = 2",
+			"\twhile m*m <= n:",
+			"\t\twhile n%m == 0:",
+			"\t\t\tn //= m",
+			"\t\t\td[m] += 1",
+			"\t\tm = m + 1 if m == 2 else m + 2",
+			"",
+			"\tif n > 1:",
+			"\t\td[n] += 1",
+			"\treturn d",
+		]
+	},
+
+	// Union-Find木
+	"Union-Find(Depth)": {
+		"prefix": ["Union-Find_VerDepth", "union-find-ver-depth", "unionfind_ver_depth"],
+		"body": [
+			"class UnionFindVerDepth():",
+			"\tdef __init__(self, N):",
+			"\t\t\"\"\" N個のノードのUnion-Find木を作成する \"\"\"",
+			"\t\t# 親の番号を格納する。自分が親だった場合は、自分の番号になり、それがそのグループの番号になる",
+			"\t\tself._parent = [n for n in range(0, N)]",
+			"\t\t# グループの深さ",
+			"\t\tself._depth = [1] * N",
+			"",
+			"\tdef find_root(self, x):",
+			"\t\t\"\"\" xの木の根(xがどのグループか)を求める \"\"\"",
+			"\t\tif self._parent[x] == x: return x",
+			"\t\tself._parent[x] = self.find_root(self._parent[x]) # 縮約",
+			"\t\treturn self._parent[x]",
+			"",
+			"\tdef unite(self, x, y):",
+			"\t\t\"\"\" xとyの属するグループを併合する \"\"\"",
+			"\t\tgx = self.find_root(x)",
+			"\t\tgy = self.find_root(y)",
+			"\t\tif gx == gy: return",
+			"",
+			"\t\t# 小さい方を大きい方に併合させる（木の偏りが減るので）",
+			"\t\tif self._depth[gx] < self._depth[gy]:",
+			"\t\t\tself._parent[gx] = gy",
+			"\t\telse:",
+			"\t\t\tself._parent[gy] = gx",
+			"\t\t\tif self._depth[gx] == self._depth[gy]: self._depth[gx] += 1",
+			"",
+			"\tdef get_depth(self, x):",
+			"\t\t\"\"\" xが属するグループの深さを返す \"\"\"",
+			"\t\treturn self._depth[self.find_root(x)]",
+			"",
+			"\tdef is_same_group(self, x, y):",
+			"\t\t\"\"\" xとyが同じ集合に属するか否か \"\"\"",
+			"\t\treturn self.find_root(x) == self.find_root(y)",
+			"",
+			"\tdef calc_group_num(self):",
+			"\t\t\"\"\" グループ数を計算して返す \"\"\"",
+			"\t\tN = len(self._parent)",
+			"\t\tans = 0",
+			"\t\tfor i in range(N):",
+			"\t\t\tif self.find_root(i) == i:",
+			"\t\t\t\tans += 1",
+			"\t\treturn ans"
+		]
+	},
+	"Union-Find(Size)": {
+		"prefix": ["Union-Find_VerSize", "union-find-ver-size", "unionfind_ver_size"],
+		"body":[
+			"class UnionFindVerSize():",
+			"\tdef __init__(self, N):",
+			"\t\t\"\"\" N個のノードのUnion-Find木を作成する \"\"\"",
+			"\t\t# 親の番号を格納する。自分が親だった場合は、自分の番号になり、それがそのグループの番号になる",
+			"\t\tself._parent = [n for n in range(0, N)]",
+			"\t\t# グループのサイズ（個数）",
+			"\t\tself._size = [1] * N",
+			"",
+			"\tdef find_root(self, x):",
+			"\t\t\"\"\" xの木の根(xがどのグループか)を求める \"\"\"",
+			"\t\tif self._parent[x] == x: return x",
+			"\t\tself._parent[x] = self.find_root(self._parent[x]) # 縮約",
+			"\t\treturn self._parent[x]",
+			"",
+			"\tdef unite(self, x, y):",
+			"\t\t\"\"\" xとyの属するグループを併合する \"\"\"",
+			"\t\tgx = self.find_root(x)",
+			"\t\tgy = self.find_root(y)",
+			"\t\tif gx == gy: return",
+			"",
+			"\t\t# 小さい方を大きい方に併合させる（木の偏りが減るので）",
+			"\t\tif self._size[gx] < self._size[gy]:",
+			"\t\t\tself._parent[gx] = gy",
+			"\t\t\tself._size[gy] += self._size[gx]",
+			"\t\telse:",
+			"\t\t\tself._parent[gy] = gx",
+			"\t\t\tself._size[gx] += self._size[gy]",
+			"",
+			"\tdef get_size(self, x):",
+			"\t\t\"\"\" xが属するグループのサイズ（個数）を返す \"\"\"",
+			"\t\treturn self._size[self.find_root(x)]",
+			"",
+			"\tdef is_same_group(self, x, y):",
+			"\t\t\"\"\" xとyが同じ集合に属するか否か \"\"\"",
+			"\t\treturn self.find_root(x) == self.find_root(y)",
+			"",
+			"\tdef calc_group_num(self):",
+			"\t\t\"\"\" グループ数を計算して返す \"\"\"",
+			"\t\tN = len(self._parent)",
+			"\t\tans = 0",
+			"\t\tfor i in range(N):",
+			"\t\t\tif self.find_root(i) == i:",
+			"\t\t\t\tans += 1",
+			"\t\treturn ans"
+		]
+	},
+
+	// ベルマンフォード法
+	"BellmanFord": {
+		"prefix": ["BellmanFord", "bellman_ford"],
+		"body":[
+			"class BellmanFord():",
+			"\t\"\"\" ベルマンフォード法",
+			"\t重み付き有向グラフにおける単一始点最短路アルゴリズム",
+			"\t",
+			"\t* 使用条件",
+			"\t\t- DAG（有向グラフで閉路を持たない）であること",
+			"\t\t- 負のコストがあってもOK",
+			"\t",
+			"\t* 負の閉路がある場合、最短路は求まらないが、負の閉路の検出はできる",
+			"\t",
+			"\t* 計算量はO(V*E)",
+			"\t\"\"\"",
+			"\tclass Edge():",
+			"\t\t\"\"\" 重み付き有向辺 \"\"\"",
+			"\t\tdef __init__(self, _from, _to, _cost):",
+			"\t\t\tself.from_ = _from",
+			"\t\t\tself.to = _to",
+			"\t\t\tself.cost = _cost",
+			"\t\t",
+			"\tdef __init__(self):",
+			"\t\tself.edges = []  # 辺",
+			"\t\tself.v_set = set()  # 頂点の集合",
+			"\t",
+			"\t@property",
+			"\tdef E(self):",
+			"\t\t\"\"\" 辺数 \"\"\"",
+			"\t\treturn len(self.edges)",
+			"\t",
+			"\t@property",
+			"\tdef V(self):",
+			"\t\t\"\"\" 頂点数 \"\"\"",
+			"\t\treturn len(self.v_set)",
+			"\t",
+			"\tdef add(self, _from, _to, _cost):",
+			"\t\t\"\"\" 2頂点と、辺のコストを追加する \"\"\"",
+			"\t\tself.edges.append(self.Edge(_from, _to, _cost))",
+			"\t\tself.v_set.add(_from)",
+			"\t\tself.v_set.add(_to)",
+			"\t",
+			"\tdef shortest_path(self, s):",
+			"\t\t\"\"\" 始点sから頂点iまでの最短路を格納したリストを返す ",
+			"\t\tArgs:",
+			"\t\t\ts(int): 始点s",
+			"\t\tReturns:",
+			"\t\t\td(list): d[i] := 始点sから頂点iまでの最短路",
+			"\t\t\"\"\"",
+			"\t\td = [float(\"inf\")] * self.V",
+			"\t\td[s] = 0",
+			"\t",
+			"\t\twhile True:",
+			"\t\t\tdo_update = False",
+			"\t\t\tfor i in range(self.E):",
+			"\t\t\t\te = self.edges[i]",
+			"\t\t\t\tif d[e.from_] != float(\"inf\") and d[e.to] > d[e.from_]+e.cost:",
+			"\t\t\t\t\td[e.to] = d[e.from_] + e.cost",
+			"\t\t\t\t\tdo_update = True",
+			"\t\t\t",
+			"\t\t\tif not do_update: break",
+			"\t\t",
+			"\t\treturn d",
+			"\t",
+			"\tdef exist_negative_loop(self):",
+			"\t\t\"\"\" 負の閉路が存在するか否か",
+			"\t\tReturns:",
+			"\t\t\t(bool): 負の閉路が存在する(True)/しない(False)",
+			"\t\t\"\"\"",
+			"\t\td = [0] * self.V",
+			"\t\tfor i in range(self.V):",
+			"\t\t\tfor j in range(self.E):",
+			"\t\t\t\te = self.edges[j]",
+			"\t\t\t\tif d[e.to] > d[e.from_] + e.cost:",
+			"\t\t\t\t\td[e.to] = d[e.from_] + e.cost",
+			"\t\t\t\t\t# n回目にも更新があるなら負の閉路が存在する",
+			"\t\t\t\t\tif i == self.V-1: return True",
+			"\t\treturn False",
+		]
+	},
+
+	// ダイクストラ法
+	"Dijkstra": {
+		"prefix": ["Dijkstra", "dijkstra", "daikusutora"],
+		"body":[
+			"class Dijkstra():",
+			"\t\"\"\" ダイクストラ法",
+			"\t重み付きグラフにおける単一始点最短路アルゴリズム",
+			"\t",
+			"\t* 使用条件",
+			"\t\t- 負のコストがないこと",
+			"\t\t- 有向グラフ、無向グラフともにOK",
+			"\t",
+			"\t* 計算量はO(E*log(V))",
+			"\t",
+			"\t* ベルマンフォード法より高速なので、負のコストがないならばこちらを使うとよい",
+			"\t\"\"\"",
+			"\tclass Edge():",
+			"\t\t\"\"\" 重み付き有向辺 \"\"\"",
+			"\t\tdef __init__(self, _to, _cost):",
+			"\t\t\tself.to = _to",
+			"\t\t\tself.cost = _cost",
+			"\t",
+			"\tdef __init__(self, V):",
+			"\t\t\"\"\" 重み付き有向辺",
+			"\t\t無向辺を表現したいときは、_fromと_toを逆にした有向辺を加えればよい",
+			"\t",
+			"\t\tArgs:",
+			"\t\t\tV(int): 頂点の数",
+			"\t\t\"\"\"",
+			"\t\tself.G = [[] for i in range(V)]  # 隣接リストG[u][i] := 頂点uのi個目の隣接辺",
+			"\t\tself._E = 0  # 辺の数",
+			"\t\tself._V = V  # 頂点の数",
+			"\t",
+			"\t@property",
+			"\tdef E(self):",
+			"\t\t\"\"\" 辺数",
+			"\t\t無向グラフのときは、辺数は有向グラフの倍になる",
+			"\t\t\"\"\"",
+			"\t\treturn self._E",
+			"\t",
+			"\t@property",
+			"\tdef V(self):",
+			"\t\t\"\"\" 頂点数 \"\"\"",
+			"\t\treturn self._V",
+			"\t",
+			"\tdef add(self, _from, _to, _cost):",
+			"\t\t\"\"\" 2頂点と、辺のコストを追加する \"\"\"",
+			"\t\tself.G[_from].append(self.Edge(_to, _cost))",
+			"\t\tself._E += 1",
+			"\t\t",
+			"\tdef shortest_path(self, s):",
+			"\t\t\"\"\" 始点sから頂点iまでの最短路を格納したリストを返す ",
+			"\t\tArgs:",
+			"\t\t\ts(int): 始点s",
+			"\t\tReturns:",
+			"\t\t\td(list): d[i] := 始点sから頂点iまでの最短コストを格納したリスト。",
+			"\t\t\t\t\t 到達不可の場合、値はfloat('inf')",
+			"\t\t\"\"\"",
+			"\t\timport heapq",
+			"\t\tque = []  # プライオリティキュー（ヒープ木）",
+			"\t\td = [float('inf')] * self.V",
+			"\t\td[s] = 0",
+			"\t\theapq.heappush(que, (0, s))  # 始点の(最短距離, 頂点番号)をヒープに追加する",
+			"\t",
+			"\t\twhile len(que) != 0:",
+			"\t\t\tcost, v = heapq.heappop(que)",
+			"\t\t\t# キューに格納されている最短経路の候補がdの距離よりも大きければ、他の経路で最短経路が存在するので、処理をスキップ",
+			"\t\t\tif d[v] < cost: continue",
+			"\t",
+			"\t\t\tfor i in range(len(self.G[v])):",
+			"\t\t\t\t# 頂点vに隣接する各頂点に関して、頂点vを経由した場合の距離を計算し、今までの距離(d)よりも小さければ更新する",
+			"\t\t\t\te = self.G[v][i]  # vのi個目の隣接辺e",
+			"\t\t\t\tif d[e.to] > d[v] + e.cost:",
+			"\t\t\t\t\td[e.to] = d[v] + e.cost  # dの更新",
+			"\t\t\t\t\theapq.heappush(que, (d[e.to], e.to))  # キューに新たな最短経路の候補(最短距離, 頂点番号)の情報をpush",
+			"\t\treturn d",
+		]
+	},
+}

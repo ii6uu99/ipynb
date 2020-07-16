@@ -1,0 +1,21 @@
+有时候，为了在win 7 控制台中运行某个Python脚本或启动jupyter notebook，需要连续输入几条命令，如果制作一个.bat文件，那么整个操作就可双击.bat完成。
+
+ 
+
+比如：
+
+第一步：激活某个anaconda虚拟环境。
+
+第二步：运行main.py程序。
+
+方法：
+
+创建一个.bat文件，在里面输入：
+
+call activate your_env_name
+call python main.py
+bat语法启动程序有两个命令，call和start。
+
+call类似于内部调用，在一个终端里面运行程序调用，而start命令是创建一个新的终端进行程序调用。
+
+转载于:https://www.cnblogs.com/Edison25/p/11095531.html

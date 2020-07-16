@@ -1,0 +1,169 @@
+choco 自动安装 windows 电脑软件资源
+
+smalike
+2019.09.30 09:17:34
+字数 148
+阅读 397
+windows 电脑软件资源使用统计
+
+2318d645689fe9bbff2989926f98206c.jpg
+基础
+
+javaJDK
+javaJRE
+python2/3
+
+浏览器
+
+chrome
+firefox
+flashplayerplugin
+
+通信
+
+微信
+QQ
+钉钉
+
+NVM
+nodejs
+Git
+svn
+tortoisesvn
+
+编辑器
+
+vscode
+sublime3
+微信web开发者工具
+Android studio
+robo 3T
+
+virtualbox
+genymotion
+teamviewer
+vagrant
+
+开发调试
+
+fiddler4
+postman
+openvpn
+vnc-viewer
+winrar
+
+系统工具
+
+treesize free
+cmake
+imagemagick
+ccleaner
+autohotkey.portable
+
+辅助
+
+网易有道词典
+有道云笔记
+迅雷极速版
+lantern
+wps
+screenToGif
+Appium
+
+模拟器
+
+夜神模拟器
+mumu模拟器
+靠谱助手
+
+可以使用 choco 命令实现处理资源自动初始化安装。
+
+参考以下实现：
+
+echo 'Start install sources...'
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+choco install -y @(
+  chocolatey-core.extension
+
+  jre8
+  jdk8
+  python
+  python2
+
+  nvm
+
+  flashplayerplugin
+  googlechrome
+  firefox
+
+  virtualbox
+  vagrant
+
+  androidstudio
+  vscode
+  sublimetext3
+
+  tortoisesvn
+  git
+  svn
+
+  # 7zip.install
+  winrar
+  openvpn
+  fiddler
+  postman
+  teamviewer
+  vnc-viewer
+
+  treesizefree
+  cmake
+  imagemagick
+  ccleaner
+  autohotkey.portable
+
+  wps-office-free
+  screentogif
+  appium-desktop
+  tim
+
+  # 自行发布组件
+  youdao-cidian
+  youdao-ynote
+  xunlei-topspeed
+
+  # anaconda3
+  # dart-sdk
+  # mongodb
+)
+nodejs.ps1
+
+# 利用 nvm 以下方式自动安装 nodejs 环境
+
+echo 'Install nodejs...'
+
+$Env:NVM_HOME="C:\ProgramData\nvm"
+$Env:Path=$Env:Path+";%NVM_HOME%;C:\ProgramData\nvm"
+$Env:Path=$Env:Path+";C:\Program Files\nodejs"
+$Env:Path=$Env:Path+";%NVM_SYMLINK%;C:\Program Files\nodejs"
+
+nvm install 10.15.3
+nvm install 8.15.1
+nvm use 8.15.1
+node -v
+npm -v
+npm i nrm -g
+nrm use taobao
+npm i @vue/cli anyproxy eslint grunt-cli pm2 yarn appium tarojs/cli -g
+
+nvm use 10.15.3
+node -v
+npm -v
+npm i nrm -g
+nrm use taobao
+npm i react-native-cli expo-cli -g
+Install
+管理员方式运行 powershell 执行命令安装相关软件
+
+Get-Content ./install.ps1 | PowerShell.exe -noprofile -

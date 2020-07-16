@@ -1,0 +1,79 @@
+cd docker-vscode-webgui
+docker build -t dvscode-web .
+docker run -p 8080:8080 -v $(pwd)/code:/code --rm -it dvscode-web
+
+/home/coder/project
+
+--user root -it -p 127.0.0.1:8080:8080
+docker run --user root -it -p 0.0.0.0:8080:8080 dvscode-web
+
+
+docker run --user root -it -p “8080:8080” -v “c:/home/coder/project” dvscode-web
+
+
+
+docker run --user root -it -p  0.0.0.0:8080:8080 -v “c:/home/coder/project” docker.io/codercom/code-server:2.1523-vsc1.38.1
+
+
+docker run -p 8080:8080 -v $(pwd):/home/coder/project --rm -it dvscode-web
+docker run -it -p 8443:8443 -v "${PWD}:/home/${USER}/code" dvscode-web --allow-http
+
+linux安装步骤
+https://blog.csdn.net/zju_cf/article/details/102765085
+
+
+
+
+VSCode将在以下位置运行：
+
+http：//本地主机：8443
+
+Docker也将放置在bash shell中以在容器内播放（扩展和配置调整）
+
+
+
+
+查看版本信息
+lsb_release -a
+No LSB modules are available.
+Distributor ID: Debian
+Description:    Debian GNU/Linux lenny/sid
+Release:        lenny/sid
+Codename:       n/a
+
+
+SuperUpdate.sh 一键更换Linux软件源脚本
+apt-get install -y wget && apt-get install -y ca-certificates
+wget -qO- git.io/superupdate.sh | bash
+https://git.io/superupdate.sh 
+https://zvv.me/z/1705.html
+
+
+
+$ docker run -it -p 8443:8443 -v "${PWD}:/home/${USER}/code" codercom/code-server --allow-http
+nohup执行
+即在后台执行，而且在ssh会话断开/用户登出时也不会终止（忽略由于用户登出产生的终止信号）。
+
+$ nohup ./code-server 工作目录 >server_log 2>&1
+https://blog.csdn.net/BlankMind/article/details/89819964
+
+
+具体安装code-linux教程
+https://www.ivdone.top/article/662.html
+
+
+code离线安装扩展
+1下载扩展
+https://marketplace.visualstudio.com/items?itemName=ms-python.python
+2vscode-扩展-通过vsix安装，本地安装
+
+
+
+docker 容器中创建文件修改操作提示 Permission denied问题
+docker exec -it 容器名称或ID bash(或/bin/sh) 进入的容器
+
+最简单的方法就是加上 -u root 就是以root权限进入容器
+docker exec -it -u root 容器名称或ID bash(或/bin/sh) 进入的容器
+
+
+

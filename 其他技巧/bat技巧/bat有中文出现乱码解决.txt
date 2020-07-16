@@ -1,0 +1,18 @@
+bat文件右键用“ 编辑”  打开，
+
+另存为时，UTF-8保存为ANSI 格式。即可解决运行是乱码问题，
+
+
+批处理bat echo中文乱码完美解决方法
+这种兼容性问题只能说是醉了，果然不记过段时间就又忘了。
+
+@echo off
+REM 声明采用UTF-8编码
+chcp 65001
+echo test
+echo 中文测试
+pause
+
+————————————————
+版权声明：本文为CSDN博主「亦游」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/tp7309/article/details/79283524

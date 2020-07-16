@@ -1,0 +1,3 @@
+%autosave 5
+
+ipynb每隔5秒钟自动保存

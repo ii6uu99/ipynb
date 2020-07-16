@@ -1,0 +1,11 @@
+下载JDK
+新建“环境变量设置.bat”文件
+文件内容：
+set cur_dir=%cd%
+@SET inputJH=%cur_dir%\jdk所在文件夹名称
+echo 正在配置环境变量，请稍后。。。
+reg add "HKCU\Environment" /v JAVA_HOME /t reg_sz /d "%inputJH%" /f
+reg add "HKCU\Environment" /v classpath /t reg_sz /d ".;%%JAVA_HOME%%\lib" /f
+reg add "HKCU\Environment" /v path /t reg_sz /d "%%JAVA_HOME%%\bin" /f
+echo 环境变量配置成功
+@pause

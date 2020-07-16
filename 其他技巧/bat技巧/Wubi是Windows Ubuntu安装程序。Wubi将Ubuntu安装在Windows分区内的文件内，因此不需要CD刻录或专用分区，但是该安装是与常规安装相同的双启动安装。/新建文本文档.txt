@@ -1,0 +1,10 @@
+wubi元项目
+https://github.com/hakuna-m/wubiuefi
+
+执行文件
+https://github.com/hakuna-m/wubiuefi/releases
+
+使用wubi沿Windows侧载Arch Linux
+https://github.wuyanzheshui.workers.dev/kryptocodes/arch_bat
+
+

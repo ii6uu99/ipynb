@@ -1,0 +1,60 @@
+新建anaconda虚拟环境
+conda create -n 名字 python=3.6
+
+git官网 https://git-scm.com
+
+代码静态检查
+pip install pylint
+
+自动整理python代码工具
+pip install yapf
+ctrl+shift+p-----搜索python.for---选中yapf
+自动整理快捷键
+alt+shift+f
+
+自动生成注释文档
+autodocstring
+快捷键ctrl+shift+2
+
+美化vscode图标
+vscode-icons
+
+
+自动插入文件头注释
+korofileheader
+
+
+可视化git版本历史
+git graph 
+
+
+unittest框架运行单元测试
+在VS Code中配置unittest框架并运行单元测试
+https://www.jianshu.com/p/18741a6fc8e5
+
+迁移模块
+pip freeze >requirements.txt
+
+第二种 (推荐) 使用 pipreqs ，github地址为： https://github.com/bndr/pipreqs
+# 安装
+pip install pipreqs
+# 在当前目录生成
+pipreqs . --encoding=utf8 --force
+注意 --encoding=utf8 为使用utf8编码，不然可能会报UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 406: illegal multibyte sequence 的错误。
+
+--force 强制执行，当 生成目录下的requirements.txt存在时覆盖。
+
+
+使用requirements.txt安装依赖的方式：
+pip install -r requirements.txt
+
+
+
+
+
+
+
+
+
+
+

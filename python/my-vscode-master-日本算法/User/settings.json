@@ -1,0 +1,76 @@
+{
+    /*** terminal  ***/
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    //"terminal.integrated.shell.windows": "C:\\Windows\\Sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+
+    /*** Run activate with Anaconda ***/
+    /*
+    "terminal.integrated.shellArgs.windows": [
+        "/K",
+        "%USERPROFILE%/AppData/Local/Continuum/anaconda3/Scripts/activate.bat",
+        "%USERPROFILE%/AppData/Local/Continuum/anaconda3",
+        ""
+    ],
+    */
+
+    /*** editor ***/
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never",
+
+    /*** Python ***/
+    "python.linting.pylingArgs": [
+      "--ignored-modules=numpy,cv2,matplotlib",
+      "--ignored-classes=numpy,cv2,matplotlib",
+      "--extension-pkg-whitelist=numpy,cv2,matplotlib"
+    ],
+
+    /*** HTML ***/
+    "html.autoClosingTags": false,
+
+    /*** window ***/
+    "window.zoomLevel": 0,
+
+    /*** workbench ***/
+    "workbench.editor.showTabs"                  : true,                  // タブを表示
+    "workbench.editor.enablePreview"             : false,                 // 毎回新規で開く
+    "workbench.editor.enablePreviewFromQuickOpen": false, // アクティビティバー(左端)を非表示に
+    "workbench.editor.tabSizing"                 : "shrink",              // タブが多い場合,文字を非表示にしてもタブ表示を優先する
+    "workbench.statusBar.visible"                : true,                  // ステータスバー(下端)を表示
+    "workbench.sideBar.location"                 : "left",                // サイドバーを左に
+    "workbench.colorTheme"                       : "Default Dark+",
+    "workbench.colorCustomizations"           : {
+      "editor.lineHighlightBackground"        : "#002255",                //現在の行の背景色
+      "editor.selectionBackground"            : "#1e9e5e5e",              //選択行の背景
+      "editor.selectionHighlightBorder"       : "#4bb2c0",                //選択行の前背景
+      "editorError.border"                    : "#ff0000",                //エラーの下線の色
+      "tab.activeBorder"                      : "#1e9e5e",                //アクティブなタブの色
+      "tab.inactiveForeground"                : "#999999",                //アクティブでないタブの色
+      "editorSuggestWidget.selectedBackground": "#1e9e5e5e",              //選択しているサジェストの背景色
+      "editorSuggestWidget.foreground"        : "#f1efef",                //選択しているサジェストの文字色
+      "editorWhitespace.foreground"           : "#8a8888",                //tab等の制御文字
+    },
+
+    /*** emmet ***/
+    "emmet.variables": {
+      "lang": "ja",
+    },
+
+    /*** Settings Each Languages ***/
+    "[python]": {
+      "editor.tabSize": 4,
+    },
+
+    "[json]": {
+      "editor.tabSize": 2,
+    },
+
+    /*** Others ***/
+    "C_Cpp.updateChannel": "Insiders",
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.inheritEnv": false,
+    "gitlens.gitCommands.closeOnFocusOut": true,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "files.trimTrailingWhitespace": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+}

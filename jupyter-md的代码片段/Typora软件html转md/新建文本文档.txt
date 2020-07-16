@@ -1,0 +1,16 @@
+下载地址
+
+https://www.typora.io/
+
+教程
+https://www.cnblogs.com/-guz/p/10258557.html
+
+网页转换成markdown
+经自己发现
+网页只需要选中内容，右键复制 然后粘贴到 markdown工具Typora中即可保留原格式
+网页粘贴到Typora
+
+在线转换
+https://phodal.github.io/2md/
+项目
+https://github.com/phodal/2md

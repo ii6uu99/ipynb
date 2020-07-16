@@ -1,0 +1,52 @@
+jupyter中用notedown插件来读取md文档
+
+在Windows下安装Anaconda后，会自动安装jupyter notebook。打开Anaconda Prompt黑窗口，通过下面命令在jupyter 上安装markdown插件（Linux下同样的道理）：
+
+ pip install https://github.com/mli/notedown/tarball/master
+
+插件安装完成后，需要配置启动Jupyter是默认启动markdown插件，配置过程如下：
+
+(1)生成默认的配置文件
+
+jupyter notebook --generate-config
+
+提示是否生成默认配置文件，yes
+
+(2)修改配置文件
+
+Windows系统下配置文件在：~/.jupyter/jupyter_notebook_config.py
+
+打开这个文件，并将下面的配置添加到文件的末尾：
+
+c.NotebookApp.contents_manager_class = 'notedown.NotedownContentsManager'
+
+
+
+----------------------------------------
+用管理员打开cmd
+.md关联为jupyter打开
+输入assoc .md=jupyter
+或者
+assoc .md=jupyter& ftype jupyter=cmd.exe /c jupyter-notebook "%1"
+
+
+.py关联为jupyter打开
+assoc .py=jupyter& ftype jupyter=cmd.exe /c jupyter-notebook "%1"
+
+
+
+
+
+
+
+
+
+(3)修改jupyter notebook的工作路径：
+
+创建快捷方式：首先把安装路径（例如：我的是‘C:\Anaconda\Anaconda2\Scripts’）下的jupyter-notebook.exe右键发送到桌面快捷方式；
+
+修改快捷方式属性：右键该快捷方式，选择属性进行快捷方式的设置，修改快捷方式的“起始位置”为自己想要的目录（如：E:\jupyter_code）;
+
+再次双击jupyter notebook的快捷方式，可以在浏览器中看到工作路径已正确修改，且能正常打开.md文件。
+
+

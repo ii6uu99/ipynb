@@ -1,0 +1,20 @@
+<NotepadPlus>
+    <InternalCommands>
+        <Shortcut id="41006" Ctrl="yes" Alt="no" Shift="no" Key="83" />
+    </InternalCommands>
+    <Macros>
+        <Macro name="Trim Trailing and save" Ctrl="yes" Alt="no" Shift="no" Key="83">
+            <Action type="2" message="0" wParam="42024" lParam="0" sParam="" />
+            <Action type="2" message="0" wParam="41006" lParam="0" sParam="" />
+        </Macro>
+    </Macros>
+    <UserDefinedCommands>
+        <Command name="Py Launcher" Ctrl="no" Alt="yes" Shift="no" Key="80">&quot;%APPDATA%\Notepad++\shortcut_batchfiles\RunPythonFull.bat&quot; &quot;$(CURRENT_DIRECTORY)&quot; &quot;$(FILE_NAME)&quot;</Command>
+        <Command name="Python Debug" Ctrl="yes" Alt="yes" Shift="no" Key="80">&quot;%APPDATA%\Notepad++\shortcut_batchfiles\RunPythonFull.bat&quot; &quot;$(CURRENT_DIRECTORY)&quot; &quot;$(FILE_NAME)&quot; pdb</Command>
+        <Command name="IPython" Ctrl="no" Alt="yes" Shift="no" Key="73">&quot;%APPDATA%\Notepad++\shortcut_batchfiles\RunPythonFull.bat&quot; &quot;$(CURRENT_DIRECTORY)&quot; &quot;$(FILE_NAME)&quot; ipython</Command>
+        <Command name="Open Current Directory" Ctrl="yes" Alt="no" Shift="no" Key="69">explorer &quot;$(CURRENT_DIRECTORY)&quot;</Command>
+        <Command name="Open PowerShell Current Directory" Ctrl="yes" Alt="no" Shift="yes" Key="76">&quot;C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe&quot; -noexit -command &quot;cd &apos;$(CURRENT_DIRECTORY)&apos;&quot;</Command>
+    </UserDefinedCommands>
+    <PluginCommands />
+    <ScintillaKeys />
+</NotepadPlus>

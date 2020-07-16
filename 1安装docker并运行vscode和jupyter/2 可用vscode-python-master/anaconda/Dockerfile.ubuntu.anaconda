@@ -1,0 +1,89 @@
+FROM codercom/code-server:3.4.1
+
+RUN sudo chmod 777 /etc/apt/sources.list
+
+RUN echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free" > /etc/apt/sources.list
+RUN echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free" >>/etc/apt/sources.list
+RUN echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free" >>/etc/apt/sources.list
+RUN echo "deb http://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free" >>/etc/apt/sources.list
+
+
+# 更新
+RUN sudo apt-get update -y && apt-get upgrade -y
+
+# ##########安装Anaconda所需的软件包 #############################
+RUN sudo apt-get install -y wget curl bzip2 libpython3-dev libboost-python-dev bash -y
+
+#下载anaconda安装 
+RUN sudo curl -O https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-5.3.1-Linux-x86_64.sh
+
+
+
+# 打开可执行文件属性 
+RUN sudo chmod +x Anaconda3-5.3.1-Linux-x86_64.sh 
+
+# 安装Anaconda
+RUN sudo bash Anaconda3-5.3.1-Linux-x86_64.sh -b
+
+# 删除
+RUN sudo rm Anaconda3-5.3.1-Linux-x86_64.sh
+
+# 将Anaconda添加到路径 
+ENV PATH /root/anaconda3/bin:$PATH 
+
+####################安装anaconda完成##############################
+
+#########################安装python库#########################
+#修改pip的默认源
+RUN pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple pip -U
+# RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip3 config set global.index-url http://mirrors.aliyun.com/pypi/simple
+RUN pip3 config set install.trusted-host mirrors.aliyun.com
+
+
+# RUN pip install pip
+RUN pip3 install wheel
+RUN pip3 install flake8
+
+#安装requirements.txt的python库
+ADD requirements.txt /home/coder/requirements.txt
+RUN pip3 install --upgrade -r /home/coder/requirements.txt
+RUN sudo rm /home/coder/requirements.txt
+
+
+
+# #############配置vscode#####################
+#安装扩展
+RUN code-server --install-extension ms-python.python
+RUN code-server --install-extension eamodio.gitlens
+
+
+# ADD settings.json /home/coder/.local/share/code-server/User/settings.json
+
+# code-server settings
+USER coder:coder
+COPY --chown=coder:coder settings.json /home/coder/.local/share/code-server/User/settings.json
+
+
+
+####################jupyter安装nbextensions扩展####################
+RUN pip install jupyter notebook
+RUN pip install jupyter_contrib_nbextensions
+RUN jupyter contrib nbextension install --user
+
+#安装nbextensions_configurator的命令
+RUN pip install jupyter_nbextensions_configurator
+RUN jupyter nbextensions_configurator enable --user
+
+
+############一个Jupyter Notebook扩展程序，用于启动VSCode服务器########
+#https://pypi.org/project/jupyter-vscode-server/
+RUN pip install jupyter-vscode-server
+
+
+
+#http端口。不要直接暴露于公共互联网！ 
+EXPOSE 8080
+
+# Run Anaconda IPython
+CMD ["jupyter notebook"]

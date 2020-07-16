@@ -1,0 +1,6 @@
+%%writefile openning.py
+%%writefile order.py
+%%writefile main.py
+!python main.py
+
+

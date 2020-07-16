@@ -1,0 +1,12 @@
+# Ignore all files
+*
+
+# Don`t ignore following files
+!/.gitignore
+
+!/User
+!/User/settings.json
+!/User/snippets
+!/User/snippets/cpp.json
+!/User/snippets/python.json
+

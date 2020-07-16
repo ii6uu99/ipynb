@@ -1,0 +1,28 @@
+FriendBook项目：
+目的：
+1. 综合应用list, set, dict, str等Python数据结构。
+2. 构建具有一定规模和复杂度的Python程序。学会后可以处理大部分工作中的相关问题。
+
+前提：掌握了list, set, dict和str的基本知识
+list: https://www.bilibili.com/video/BV12t4y127Q5
+dict: https://www.bilibili.com/video/BV1Lf4y1U7Se
+set: https://www.bilibili.com/video/BV1fz411q73c
+str: https://www.bilibili.com/video/bv1nZ4y1s7Rp
+
+背景：
+感情账号理论：
+每个人都有一个感情账本，上面记录着和自己有关联的人和相应的感情分数
+我们的每一次都交往都会改变这个分数
+有的事情会加分
+有的事情会减分
+久而久之（日久见人心）- 红名单，黑名单。
+
+课程：
+1. 实现主程序
+2. 构建模拟数据
+3. 实现功能：
+#查询一个人
+#如果有多个同名：提示列表并选择编号。
+#显示这个人的名字：提示它的好友列表。
+#显示好友名单：前3
+#显示黑名单：后3

@@ -1,0 +1,57 @@
+https://gitee.com/mo2/linux
+https://gitee.com/mo2/linux
+如果你在国内,那么请输
+
+    sudo apt update
+    sudo apt install -y curl
+    bash -c "$(curl -L l.tmoe.me)"
+
+
+国外
+  sudo apt update
+    sudo apt install -y curl
+    bash -c "$(curl -L git.io/linux.sh)"
+
+
+2.Android-Termux
+1.Go to google play, then install Termux and Termux:api
+2.Open termux and enter the following command.
+
+1.安装安卓版Termux 和Termux:api
+2.打开 termux，输入下面 bash 开头的命令
+如果你在国内,那么请输
+    . <(curl -L l.tmoe.me)
+3-CN.如需使用 gui,可能还需要安装 VNC apk,您可以前往 Google play 或使用 Tmoe-linux 的 debian-i 来下载。
+注：web 端的 novnc 无需安装 apk,但触控操作体验不佳
+
+
+
+3.Debian/Ubuntu/Mint/Kali/Deepin/Devuan/MX 等 deb 系发行版
+如果你在国内,那么请输
+
+     sudo apt update
+     sudo apt install -y wget
+     bash -c "$(wget -O- l.tmoe.me)"
+
+重新打开wsl子系统，然后输
+
+    sudo apt update
+    sudo apt install -y curl
+    bash -c "$(curl -L gitee.com/mo2/linux/raw/2/2)"
+
+
+
+安装zsh
+国内网址https://gitee.com/mo2/zsh
+1.Android-Termux
+如果你在国内，那么可以使用 gitee 仓库。
+
+    bash -c "$(curl -LfsS https://gitee.com/mo2/zsh/raw/master/zsh.sh)"
+2.Debian/Ubuntu/Mint/Kali/Deepin/Devuan/MX 等 deb 系发行版
+
+    sudo apt update
+    sudo apt install -y wget
+    bash -c "$(wget -qO- https://gitee.com/mo2/zsh/raw/master/zsh.sh)"
+
+
+

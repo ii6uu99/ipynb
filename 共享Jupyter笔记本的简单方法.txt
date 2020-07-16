@@ -1,0 +1,8 @@
+共享Jupyter笔记本的简单方法
+nbviewer.jupyter.org
+
+使用github+nbviewer分享notebook结果
+https://www.jianshu.com/p/ff48ea53b78a
+
+nbviewer的本地启动
+https://www.jianshu.com/p/2c311c43c3c4

@@ -1,0 +1,5 @@
+GitHub项目：
+
+https://github.com/goodchinas/pyquant
+
+  分享notebook格式小项目，从入门到numpy、pandas、matplotlib等各种库的讲解和练习，非常适合新手入门。

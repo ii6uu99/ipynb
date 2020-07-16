@@ -1,0 +1,17 @@
+开源框架
+
+Pandas - 数据分析包
+Zipline - 一个Python的回测框架
+vnpy - 基于python的开源交易平台开发框架
+tushare - 财经数据接口包
+easytrader - 进行自动的程序化股票交易
+pyalgotrade - 一个Python的事件驱动回测框架
+pyalgotrade-cn - Pyalgotrade-cn在原版pyalgotrade的基础上加入了A股历史行情回测，并整合了tushare提供实时行情。
+zwPython - 基于winpython的集成式python开发平台
+quantmod - 量化金融建模
+rqalpha - 基于Python的回测引擎
+quantdigger - 基于python的量化回测框架
+pyktrader - 基于pyctp接口，并采用vnpy的eventEngine，使用tkinter作为GUI的python交易平台
+QuantConnect/Lean - Lean Algorithmic Trading Engine by QuantConnect (C#, Python, F#, VB, Java)
+QUANTAXIS - 量化金融策略框架
+其他量化交易平台：

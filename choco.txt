@@ -1,0 +1,5 @@
+Chocolatey v0.10.15
+chocolatey
+putty
+putty.portable
+3 packages installed.

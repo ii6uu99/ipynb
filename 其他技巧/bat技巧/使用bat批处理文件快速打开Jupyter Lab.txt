@@ -1,0 +1,10 @@
+使用bat批处理文件快速打开Jupyter Lab
+
+咱们常常不厌其烦打开cmd，cd到咱们的文件目录，而后输入jupyter lab或者是jupyter notebook，这里其实能够本身编写bat批处理文件一键打开。
+新建.bat文件
+
+cd 文件目录
+jupyter lab
+PAUSE
+
+

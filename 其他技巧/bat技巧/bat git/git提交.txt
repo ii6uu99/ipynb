@@ -1,0 +1,20 @@
+bat从终端输入变量赋值 git提交
+
+@echo off
+cls
+cd lyDoc
+set/p str="输入提交信息(回车结束):"
+@echo "%str%"
+git pull
+git add .
+git commit -m "%str%"
+git push
+pause
+
+
+
+
+
+————————————————
+版权声明：本文为CSDN博主「老城管」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：httpsblog.csdn.netthemagickeyjiananarticledetails87618727

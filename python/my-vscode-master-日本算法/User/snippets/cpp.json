@@ -1,0 +1,698 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"KyoPro-sample": {
+		"prefix": "kyopro_default",
+		"body": [
+			"#define _USE_MATH_DEFINES  // M_PI等のフラグ",
+			"",
+			"#include <iostream>",
+			"#include <string>",
+			"#include <cstring>",
+			"#include <cmath>",
+			"#include <algorithm>",
+			"#include <map>",
+			"#include <vector>",
+			"#include <list>",
+			"",
+			"#define MOD 1000000007",
+			"#define COUNTOF(array) (sizeof(array)/sizeof(array[0]))",
+			"",
+			"using namespace std;",
+			"",
+			"string replace_with_str(string str, string str_from, string str_to) {",
+			"\tstring::size_type pos = 0;",
+			"\twhile (pos = str.find(str_from, pos), pos != string::npos) {",
+			"\t\tstr.replace(pos, str_from.length(), str_to);",
+			"\t\tpos += str_to.length();",
+			"\t}",
+			"\treturn str;",
+			"}",
+			"",
+
+			"void solve(){",
+			"\t${0:Go!}",
+			"}",
+			"",
+
+			"int main(int argc, char const *argv[]){",
+			"\tsolve();",
+			"\treturn 0;",
+			"}",
+		],
+		"description": "Default for KyoPro"
+	},
+
+	"cin_sample": {
+		"prefix": "cin_sample",
+		"body": [
+			"cin >> ${0};"	
+		],
+		"description": "cin I often use at Kyopro"
+	},
+
+	"cout_sample": {
+		"prefix": "cout_sample",
+		"body": [
+			"cout << ${0} << endl;"
+		],
+		"description": "cout I often use at Kyopro"
+	},
+
+	"printf_%d": {
+		"prefix": "printf_%d",
+		"body": [
+			"printf(\"%d\\n\", ${0:a});"
+		]
+	},
+
+	"scanf_%d": {
+		"prefix": "scanf_%d",
+		"body": [
+			"scanf(\"%d\",${0:&a});"
+		]
+	},
+
+	"scanf_%c": {
+		"prefix": "scanf_%c",
+		"body": [
+			"scanf(\"%c\",${0:&a});"
+		]
+	},
+
+	/********************************************
+	[string]
+
+	http://vivi.dyndns.org/tech/cpp/string.html
+
+	#include <string>
+	using namespace std;
+
+	// 空文字列の生成
+	string s;
+
+	// 文字列の初期化
+	string s = "abc";
+
+	string s(5, 'a'); --> "aaaaa"
+	
+	string s("abc")   --> "abc"
+
+	char *data = "hoge";
+	string s(data);   --> "hoge"
+
+	char chars[] = {'a', 'b', 'c'};
+	string s(chars, end(chars));  --> "abc"
+
+	char *str = "abc123xyz";
+	string s(str+3, str+6)  --> "123"
+
+	// コピーコンストラクタ
+	//   - 同じ型のオブジェクトを渡され、それと同じ内容のオブジェクトを作成する
+	string org("abc");
+	string x(org);  --> x = "abc"
+
+	// string型はvectorのようにアクセスできる
+	string s = "abcd";
+	char c = s[0];  -->  c = 'a'
+	s[1] = 'B';
+	printf("%s", s.c_str());  --> "aBcd"
+
+	// string型をprintfするときはc_str()が必要
+	printf("%s", s.c_str());	
+
+	// 文字列の連結
+	string s1 = "abcd";
+	string s2 = "efgh";
+	cout << s1+s2 << endl;  --> "abcdefgh"
+
+	// push_back()または+=
+	//   - 文字列の追加
+	string s;
+	s.push_back('A');
+	// s.push_back("ABC")  --> 文字列はerror
+	s += 'B';
+	s += "CD";
+	cout << s << endl;  --> "ABCD"
+	
+	// insert()
+	//   - 文字の挿入
+	string s = "ABCD";
+	s.insert(s.begin()+2, '-');
+	s.insert(s.begin()+2, "--");  --> ERROR!!
+	cout << s << endl;  --> "AB-CD"
+
+	// pop_back()
+	//   - 最後尾文字の削除
+	//   - なぜか削除した文字を返さない
+	string s = "ABCD";
+	s.pop_back();  --> "ABC";
+
+	// erase()
+	//   - 文字列を削除する
+	string s = "ABCD";
+	s.erase(s.begin()+2);  --> "ABD"
+
+	// empty(): bool
+	//   - size()で確認するよりも高速
+	string s;
+	s.empty  --> true
+
+	// size(): size_t
+	// length(): size_t
+	//   - 文字列の大きさを返す
+	//   - size_t はサイズを表す型で、符号なし整数の組み込み型である
+	//   - vectorなどの互換性のためにsize()がある？
+	string s = "ABC";
+	s.size();    --> 3
+	s.length();  --> 3
+
+	// capacity(): size_t
+	//   - 確保されているメモリに入る文字数を返すらしい
+	//   - 少し大きめに確保されていることがわかる
+	string s = "ABCD";
+	s.capacity();  --> 15
+
+	// front(): charへの参照
+	//   - 先頭文字を返す
+	string s = "ABC";
+	s.front()  --> 'A'
+
+	// back(): charへの参照
+	//   - 末尾文字を返す
+	string s = "ABC";
+	s.back()  --> 'C'
+
+	// substr(位置、サイズ): string
+	//   - 部分文字列を返す
+	string s = "ABCD";
+	s.substr(0, 2);  --> "AB"
+
+	// c_str(): charへのポインタ
+	// data(): charへのポインタ
+	//   - &s[0]と同等
+	string s = "ABCD";
+	printf("%s", s.c_str());  --> "ABCD"
+	
+	// clear(): void
+	//   - 空文字にする
+	string s = "ABCD";
+	s.clear();  --> 空文字列;
+
+	// resize(サイズ): void
+	//   - 文字数を指定サイズに設定する
+
+	// reserve(サイズ): void
+	//   - キャパシティを指定する
+
+	// swap(文字列): void
+	//   - 引数で指定されたオブジェクトと内容を入れ替える
+	string s1, s2;
+	s1 = "ABCD";
+	s2 = "XYZ";
+	s1.swap(s2);  --> s1 = "XYZ", s2 = "ABCD"
+
+	// shrink_to_fit(): void
+	//   - C++11で追加
+	//   - キャパシティを現在の値にし、余分なメモリを開放する
+
+
+	********************************************/
+	"string_erase_sample": {
+		// s = "ABCA";
+		// s.erase(s.begin()+1); --> "ACA"
+		// s.erase(s.begin(), s.begin()+3); --> "A"
+		// s.erase(find(s.begin(), s.end(), 'A') --> "BCA"
+		"prefix": "string_erase_sample",
+		"body": [
+			"s.erase(find(s.begin(), s.end(), 'a'));"
+		],
+		"description": "文字列sから文字'a'をひとつ消す"
+	},
+
+	"func:string_all_erase": {
+		// s = "atcoderaaa"
+		// string_all_erase(s, 'a') --> "tcoder" 
+		"prefix": "func:string_all_erase",
+		"body": [
+			"string string_all_erase(string s, char erase_c){",
+				"\tstd::string::size_type pos = s.find(erase_c);",
+				"\twhile(pos != std::string::npos){",
+					"\ts.erase(pos, 1);  // 1文字削除",
+					"\tpos = s.find(erase_c, pos);",
+				"\t}",
+				"\treturn s;",
+			"}"
+		],
+		"description": "文字列sから文字cをすべて消す"
+	},
+
+	"transform_toupper": {
+		// s = "abcdef"
+		// transform(開始位置, 終了位置, 生成先, ::toupper)
+		// transform(s.begin(), s.end(), s.begin(), ::toupper); ==> s = "ABCDEF"
+		// transform(s.begin()+2, s.begin()+4, s.begin(), ::toupper); ==> s = "CDcdef"
+		"prefix": "transform_toupper",
+		"body": [
+			"transform(s.begin(), s.end(), s.begin(), ::toupper);"
+		],
+		"description": "文字列sを大文字にする"
+	},
+
+	"transform_tolower": {
+		"prefix": "transform_toupper",
+		"body": [
+			"transform(s.begin(), s.end(), s.begin(), ::tolower);"
+		],
+		"description": "文字列sを小文字にする"
+	},
+
+	"string_substr_sample": {
+		// stringの位置posから長さiの部分文字列を返す
+		// s = "abcdef"
+		// s.substr(1,3) ==> "bcd"
+		"prefix": "string_substr",
+		"body": "string.substr(pos, i);",
+		"description": "部分文字列を抽出する"
+	},
+
+	"str_slice": {
+		// stringの位置pos1からpos2までの部分文字列を返す（スライス）
+		// s = "abcdef"
+		// str_slice(s, 2, 3) ==> "c"
+		// str_slice(s, 2, 2) ==> ""
+		// str_slice(s, 2, 0) ==> ""
+		// str_slice(s, 2, 100) ==> "cdef"
+		"prefix": "str_slice",
+		"body": [
+			"string str_slice(string s, int start, int end){",
+			"\tif(end > s.size()){",
+			"\t\tend = s.size();",
+			"\t}",
+			"\tif(end-start <= 0){",
+			"\t\treturn \"\";",
+			"\t}",
+			"\treturn s.substr(start, end-start);",
+			"}",
+		],
+		"description": "部分文字列を抽出する"
+	},
+
+	"reverse_sample": {
+		// stringを逆順にする
+		// s = "ABCDEFG"
+		// reverse(s.begin(), s.end()) ==> s = "GFEDCBA"
+		"prefix": "reverse_sample",
+		"body": "reverse(s.begin(), s.end());",
+		"description": "文字列を逆順にする"
+	},
+
+
+	"for_map_iterator": {
+		// mapはキーでソートされている
+		// it->firstがキー
+		// it->secondが値
+		"prefix": "for_map_iterator",
+		"body": [
+			"for(auto it=mp.begin(); it!=mp.end(); it++){",
+			"\tcout << it->first << it->second << endl;",
+			"}",
+		],
+		"description": "for_map with iterator"
+	},
+
+	"for_map_pair": {
+		// mpの型とpairの型を合わせること
+		// map<string, int> mp ==> pair<string, int>
+		// p.firstはキー、p.secondは値
+		"prefix": "for_map_pair",
+		"body": [
+			"for(pair<char, int> p:mp){",
+			"\tcout << p.first << p.second << endl;",
+			"}"
+		],
+		"description": "foreach_map with pair"
+	},
+
+	"stable_sort_hairetsu_ascend": {
+		/* hairetsuの型とgreaterの型を合わせること */
+		"prefix": "sort_hairetsu_ascend",
+		"body": [
+			"stable_sort(${0:h}, ${1:h}+COUNTOF(${2:h}));"
+		],
+		"description": "配列の安定ソート（昇順）"
+	},
+
+	"stable_sort_hairetsu_descend": {
+		/* hairetsuの型とgreaterの型を合わせること */
+		"prefix": "sort_hairetsu_descend",
+		"body": [
+			"stable_sort(${0:h}, ${1:h}+COUNTOF(${2:h}), greater<${3:int}>());"
+		],
+		"description": "配列の安定ソート（降順）"
+	},
+
+	/*
+	[map]
+
+	#include <map>
+	using namespace std;
+
+	*/
+	"map_sample": {
+		"prefix": "map_sample",
+		"body": "map<string, int> mp;",
+		"description": "連想配列を作成する"
+	},
+
+
+	/*
+	std::end()
+	配列末尾へのポインタを返す
+
+	int data[] = {1,2,3};
+	int *a = data;      --> 0x7ffdc2413f00
+	int *b = end(data); --> 0x7ffdc2413f0c
+	*/
+
+
+	/*
+	[vector]
+
+	http://vivi.dyndns.org/tech/cpp/vector.html
+
+	#include <vector>
+	using namespace std;
+
+	// 初期化
+	vector<int> vec(100);  --> int型で、要素数100の動的配列vec
+
+	vector<int> vec(100, 5)  --> int型で、要素数100で、全ての要素を5で初期化
+
+	int org_data[] = {1,2,3};  // 元データ
+	vector<int> data(org_data, org_data+3);  // 元データから動的配列を生成
+
+	int org_data[] = {1,2,3};
+	vector<int> data(org_data, end(org_data));  // 元データから動的配列を生成
+
+	vector<int> data{1,2,3};  // データ列を指定して動的配列を生成する
+
+	// コピーコンストラクタ
+	vector<int> org{1,2,3};
+	vector<int> x(org);  --> {1,2,3}
+
+	// 2次元配列
+	vector<vector <int>> vec{{1,2,3}, {4,5,6}};
+
+	// oerator=
+	// 同じ型同士であれば、=を使って通常の変数同様に代入することができる
+	vector<int> a{1,2,3,4};
+	vector<int> b, c;
+	c = b = a;  // aの内容をb,cに代入
+
+	// assign(first, last): void
+	// [first, last)の範囲のデータをvectorに代入できる
+	int ar[] = {1,2,3,4,5,6,7};
+	vector<int> vec{9,8};
+	vec.assign(&ar[0], &ar[3]);  --> vec = {1,2,3}
+
+	// assign(size_t n, cont T& val): void
+	// 要素数、値を指定して代入できる
+	vector<int> vec{9, 8};
+	vec.assign(3,1);  --> vec = {1,1,1}
+
+	// operator[]
+	vector<int> vec{1,2,3};  --> vec[0] = 1
+
+	// at(int ix): T&
+	// 返り値は値ではなく、要素への参照を返す
+	vector<int> vec{1,2,3};  --> vec[0] = 1
+	vec.at(0) = 9;  --> vec = {9,2,3}
+
+	// イテレータ
+	// イテレータとは、抽象化されたポインタのことである（？）
+	vector<int>::iterator itr;  // vector<int>の要素へのイテレータ
+	
+	// begin()とend()
+	vector<int> vec{1,2,3,4};
+	vector<int>::iterator itr = vec.begin();  // 最初の要素を指すイテレータ
+	cout << *itr << endl;  --> // 最初の要素の値を表示
+	++itr;                     // 次の要素に移動
+	*itr = 9;                  // 二番目の要素の値を9に変更
+
+	// イテレータを使ってvectorの要素の全てを走査する
+	for(auto itr=vec.begin(); itr!=vec.end(); ++itr){
+		cout << *itr << endl;
+	}
+
+	// push_back():void
+	// データを末尾に追加する
+	vector<string> vec;
+	vec.push_back("abcd");
+	vec.push_back("ABCD");
+	printf("%s", vec[0]); --> "abcd"
+	printf("%s", vec[1]); --> "ABCD"
+
+	// emplace_back(コンストラクタ引数):void
+	// コンテナが保持する型Tがクラスの場合、新規クラスオブジェクトをコンテナ末尾に追加する
+	vec.push_back(T(コンストラクタ引数));
+	// 上記はpush_back()の中でコピーコンストラクタに渡されて生成されて
+	// オブジェクトがコンテナに追加され、push_back()コール時に生成されたオブジェクトが破棄される。
+	// コピーコンストラクタ、オブジェクトの破棄の処理が重いクラスの場合、
+	// 代わりにemplace_back()を使うと良い。
+	class Hoge {
+		public:
+			Hoge(std::string&, int);  // コンストラクタ
+			.....
+	};
+	.....
+	std::vector<Hoge> vec;
+	vec.emplace_back("abc", 123);  // push_back(Hoge("abc", 123))と同等
+
+	// insert(iterator, 値): iterator
+	// 任意の場所のデータをO(N)で挿入する
+	vector<int> vec(10, 3);
+	vec.insert(vec.begin()+4, 99);  // [4]の位置に99を挿入
+	--> {3, 3, 3, 3, 99, 3, 3, 3, 3, 3, 3}
+
+	// pop_back(): void
+	// 最後の要素を削除する
+	// 何故か返り値がvoidなので、最後の要素の値がほしい場合はback()を使用する
+	vector<int> vec{1,2,3,4,5,6};
+	int a = vec.back();  // a == 6
+	vec.pop_back();      // vec = {1,2,3,4,5} 
+
+	// erase(iterator): iterator
+	vector<int> vec{1,2,3,4,5};
+	vec.erase(vec.begin()+2);   // vec = {1,2,4,5}
+
+	// empty():bool
+	// vectorが空ならばtrue,そうでなければfalse
+	// size() == 0より高速かも
+	if(!vec.empty()){
+		// vecが空でないときの処理
+	}
+
+	// size():size_t
+	// 要素数を返す
+	// 通常配列だとsizeof(data)/sizeof(data[0])のようにやるが、vectorではそうしなくて良い
+	for(int i=0; i != vec.size(); i++){
+		vec[i] = 99;
+	}
+
+	// capacity(): size_t
+	// 動的配列が確保しているメモリに入る要素数、すなわち現在のデータ容量を返す関数
+
+	// front(): 要素の型への参照
+	// 先頭要素を返す
+	// back(): 要素の型への参照
+	// 末尾要素を返す
+	vector<int> vec{1,2,3};
+	auto a = vec.front();  // a == 1
+	auto b = vec.back();   // b == 3
+
+	// data(): 要素の型へのポインタ
+	// 配列データ先頭アドレスを返す。&hoge[0]と同等
+
+	// clear(): void
+	// サイズを0にするだけ。メモリは解放されない。
+	// メモリを開放したい場合はshrink_to_fit()またはswap()を使用する
+
+	// resize(サイズ): void
+	// 要素数を指定サイズに設定する
+
+	// reserve(サイズ): void
+	// キャパシティを指定する
+	vector<int> vec;
+	vec.reserve(10000);  // 予め1万個の領域を確保しておいたほうが高速
+	for(int i=0; i<10000; i++){
+		vec.push_back(i);
+	}
+
+	// swap(オブジェクト): void
+	// 引数で指定されたオブジェクトと内容を入れ替える関数
+	vector<int> v, z;
+	v, zにデータを追加
+	v.swap(z);  // vとzの内容を入れ替える
+
+	// shrink_to_fit(): void
+	// clear()を使ってもメモリは開放されないので、C++11以前は以下のようなコードを書いていた
+	vector<int> vec;
+	vecにデータを追加
+	vector<int>().swap(vec);  // 空のテンポラリオブジェクトを生成し、中身を入れ替える
+
+	// shrink_to_fitはC++11で追加され、キャパシティを現在のサイズの値にし、余分なメモリを開放する
+
+	// vectorを関数の引数として渡す
+	// vectorはクラスなので、vectorオブジェクトを引数として関数に渡すことが可能
+	int max(vector<int> v){
+		v[i]...
+	}
+	vector<int> vec;
+	int mx = max(vec);
+
+	// 上記の書き方は正しく動作するが、値渡しは関数コール時にコピーコンストラクタが呼ばれるので重い。
+	// 参照渡しにするのが良い
+	int max(vector<int> &v){
+		v[i]...  // 中身は一緒
+	}
+
+	// よく使うアルゴリズム
+	
+	// count(begin, end, 値)
+	// 動的配列のbeginからendまでを走査し、指定の値の数を返す
+	vector<int> vec{1,2,2,3,3,3,4,4,4,4};
+	count(vec.begin(), vec.end(), 3)  // --> 3
+
+	// find(begin, end, 値)
+	// beginからendまでを走査し、最初の要素へのイテレータを返す
+	vector<int> vec{1,2,3,4,5,4,3,2,1};
+	auto itr = find(vec.begin(), vec.end(), 4);  // 最初に見つかった4のイテレータを返す
+	if(itr != v.end()){
+		// 発見した場合の処理
+	}
+
+	// 途中から検索する場合
+	vector<int> vec{1,2,3,4,5,6,7,6,5,4,3,2,1};
+	auto itr = vec.begin();
+	while(true){
+		itr = find(itr, vec.end(), 5);
+		if(itr == vec.end()){ break; }
+		cout << itr - vec.begin() << endl;  // インデックスを表示
+		++itr;
+	}
+
+	// accumulate(begin, end, init)
+	// beginからendまで、要素を積算する。initは初期値。
+	#include <numeric>
+	vector<int> vec{1,2,3,4,5,4,3,2,1};
+	auto sum = accumulate(vec.begin(), vec.end(), 0);
+
+	// sort(begin, end)
+	// 要素を昇順にソートする
+	vector<int> vec{1,2,3,4,5,4,3,2,1};
+	sort(vec.begin(), vec.end());
+
+	// reverse(begin, end)
+	// 要素を逆順にする
+	vector<int> vec{1,2,3,33,2,1,99,1};
+	reverse(vec.begin(), vec.end());  // --> {1,99,1,2,33,3,2,1}
+
+	*/
+	"stable_sort_vector_ascend": {
+		/* vectorの型とgreaterの型を合わせること */
+		"prefix": "sort_vector_ascend",
+		"body": [
+			"stable_sort(${0:v.begin()}, ${1:v.end()});"
+		],
+		"description": "vectorの安定ソート（昇順）"
+	},
+
+	"stable_sort_vector_descend": {
+		/* vectorの型とgreaterの型を合わせること */
+		"prefix": "sort_vector_descend",
+		"body": [
+			"stable_sort(${0:v.begin()}, ${1:v.end()}, greater<${2:int}>());"
+		],
+		"description": "vectorの安定ソート（降順）"
+	},
+
+	"map_sample": {
+		"prefix": "map_sample",
+		"body": "map<string, int> mp;",
+		"description": "連想配列を作成する"
+	},
+
+	/*
+	vector
+	*/
+	"vector_sample": {
+		"prefix": "vector_sample",
+		"body": "vector<int> vec(N, 0)",
+		"description": "vectorを作成する"
+	},
+
+	"vector_2d": {
+		"prefix": "vector_2d",
+		"body": "vector<vector<int>> vv(N, vector<int>(N, 0))",
+		"description": "2次元vectorを作成する"
+	},
+
+	"string_replace_with_str":{
+		"prefix": "string_replace_with_str",
+		"body": [
+			"string replace_with_str(string str, string str_from, string str_to) {",
+				"\tstring::size_type pos = 0;",
+				"\twhile (pos = str.find(str_from, pos), pos != string::npos) {",
+				"\t\tstr.replace(pos, str_from.length(), str_to);",
+				"\t\tpos += str_to.length();",
+				"\t}",
+				"\treturn str;",
+				"}",
+		],
+		"description": "文字列の置換(string)"
+	},
+
+	/*
+	pair
+	https://programming-place.net/ProgrammingPlacePlus/cpp/library/003.html
+	*/
+	// pair<int, int> itv[10];
+	// itv[i].first = 10;
+	// itv[i].second = 20;
+	// sort(itv, itv + N); (first要素でソートされる)
+	"pair_sample":{
+		"prefix": "pair_sample",
+		"body": [
+			"pair<int, int> itv[N];"
+		],
+		"description": "pairのサンプル"
+	},
+
+	"nake_pair_sample":{
+		"prefix": "make_pair_sample",
+		"body": [
+			"auto a = make_pair(10, 20);"
+		],
+		"description": "make_pairのサンプル"
+	},
+	
+
+
+	// END
+	"dummy":{
+		"prefix": "dummy",
+		"body": "dummy"
+	}
+}

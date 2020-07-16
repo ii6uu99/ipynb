@@ -1,0 +1,47 @@
+https://hub.fastgit.org/BrainStorm-commits/Docker-installation-Windows10Home
+
+docker下载地址 https://docs.docker.com/toolbox/toolbox_install_windows/
+
+
+安装 Hyper-V and Containers
+
+  创建一个名为 InstallHyperV.bat
+加入代码
+
+pushd "%~dp0"
+dir /b %SystemRoot%\servicing\Packages\*Hyper-V*.mum >hyper-v.txt
+for /f %%i in ('findstr /i . hyper-v.txt 2^>nul') do dism /online /norestart /add-package:"%SystemRoot%\servicing\Packages\%%i"
+del hyper-v.txt
+dism /online /enable-feature /featurename:Microsoft-Hyper-V -All /LimitAccess /ALL
+pause
+
+3. 以管理员运行InstallHyperV.bat
+
+4.   创建一个名为 InstallContainers.bat
+
+5. 加入代码:
+
+pushd "%~dp0"
+dir /b %SystemRoot%\servicing\Packages\*containers*.mum >containers.txt
+for /f %%i in ('findstr /i . containers.txt 2^>nul') do dism /online /norestart /add-package:"%SystemRoot%\servicing\Packages\%%i"
+del containers.txt
+dism /online /enable-feature /featurename:Containers -All /LimitAccess /ALL
+pause
+
+6. 以管理员运行InstallContainers.bat
+
+更新：一些用户对脚本的媒体格式和包装有问题。如果你有问题，试着照搬这个要点。
+
+7. 重新启动计算机
+
+好的，太好了！现在我们已经安装了Hyper-V和容器，是时候欺骗Docker了，我们正在WindowsPro上运行。😎
+
+在注册表中编辑Windows版本
+
+    Press Windows + R and write regedit
+
+2. In the Registry Editor, go to \HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion
+
+3. Right-click on EditionID and Click Modify
+
+4. Change Value Data to Professional

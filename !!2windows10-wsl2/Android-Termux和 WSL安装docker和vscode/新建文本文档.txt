@@ -1,0 +1,11 @@
+重要
+🍭无需任何Linux Shell基础知识，您就可以轻松地在以下位置安装和配置GNU / Linux图形桌面环境 📱Android-Termux和 💻WSL。
+🍰您可以在Android手机上运行VSCode。
+🍹图形用户经理，🐋支持在Android上运行docker。
+桌面美化🌼，支持将近10年的薄荷和Ubuntu壁纸包下载🍥
+https://hub.fastgit.org/2moe/tmoe-linux/blob/master/install.sh
+
+curl: (7) Failed to connect to raw.githubusercontent.com port 443: Connection refused
+443 端口连接被拒一般是因为墙的原因，如果你可以科学上网（Virtual Private Network）的话，在命令行键以下命令执行：
+# 7890 和 789 需要换成你自己的端口
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:789

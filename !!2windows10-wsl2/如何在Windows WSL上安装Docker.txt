@@ -1,0 +1,39 @@
+如何在Windows WSL上安装Docker
+
+安装步骤
+首先：前往此处
+https://hub.docker.com/editions/community/docker-ce-desktop-windows/
+将docker桌面安装到Windows
+第二：重新启动计算机后，转到docker settings并检查 勾选 Expose daemon on tcp://localhost:2375 without TLS
+示例图片
+
+第三：安装后（可能需要重新启动计算机），转到~/.profile并输入export DOCKER_HOST=127.0.0.1:2375
+四：另外，转到您的~/.bashrc并添加
+PATH="$PATH:/mnt/c/Program\ Files/Docker/Docker/resources/bin"
+alias docker=docker.exe
+alias docker-machine=docker-machine.exe
+alias docker-compose=docker-compose.exe
+export DOCKER_HOST="tcp://localhost:2375"
+最后👍大功告成通过打字，只需重新启动source ~/.profile，并source ~/.bashrc与测试码头工人与docker run hello-world
+
+
+sudo apt-get install docker     
+sudo apt install docker.io  
+sudo service docker start
+sudo docker version
+
+具体操作 https://www.cnblogs.com/xiaoliangge/p/9134585.html
+
+wsl Ubuntu 使用 docker 报错： “Cannot connect to the Docker daemon ... Is the docker daemon running? ”
+目前 wsl 是不支持 docker 的守护进程的，必须安装docker桌面版
+
+
+-------------------------------------------------------
+设置 alias 有助于你快速的访问 window 目录
+1.打开.bashrc文件 vim ~/.bashrc
+2.插入以下内容，以后只需要cdd就可以直接进入d盘了
+alias cdc='cd /mnt/c/'
+alias cdd='cd /mnt/d/'
+alias cde='cd /mnt/e/'
+
+
