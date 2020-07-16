@@ -127,8 +127,6 @@ choco install typora
 choco list -l --idonly > choco.txt 
 ssh-keygen -t rsa -C "ii6uu99@163.com"
 git pull
-git commit -m "ne"
-git push -u origin master
 py -m pip install --user virtualenv
 python main.py
 docker-compose up -d
@@ -152,4 +150,6 @@ cli pip8 pip install helping
 cli pip install helping
 cli ls
 cli sudo.bat
+git push -u origin master
+git commit -m "ne"
 git add .
