@@ -150,6 +150,6 @@ cli pip8 pip install helping
 cli pip install helping
 cli ls
 cli sudo.bat
-git push -u origin master
-git commit -m "ne"
 git add .
+git commit -m "ne"
+git push -u origin master
