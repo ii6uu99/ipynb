@@ -28,3 +28,5 @@ git pull --rebase origin master
 原文链接：https://blog.csdn.net/downanddusk/article/details/88344389
 
 
+
+移动文件到自启动文件夹C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
