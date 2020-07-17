@@ -234,3 +234,4 @@ docker search centos
 set curr=%%~sI
 curl
 %curr%
+choco install nircmd
