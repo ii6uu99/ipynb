@@ -6,7 +6,8 @@ set url=git@github.com:ii6uu99/%folder%.git
 if exist .git (
 git add .
 git commit -m submit-auto
-git pull origin master
+:: origin master
+git pull
 
 ) else (
 
