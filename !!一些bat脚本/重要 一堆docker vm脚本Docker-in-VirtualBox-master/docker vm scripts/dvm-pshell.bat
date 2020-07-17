@@ -1,0 +1,1 @@
+start powershell.exe -noexit -command "dvmp"

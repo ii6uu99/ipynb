@@ -1,0 +1,5 @@
+::bat 获取当前文件夹的文件名
+@echo off
+pushd %1 & for %%i in (.) do set curr=%%~ni
+echo %curr%
+pause

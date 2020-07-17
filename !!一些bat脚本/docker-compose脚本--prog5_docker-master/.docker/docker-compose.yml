@@ -1,0 +1,29 @@
+# @file: docker-compose.yml
+# @brief: 宮崎大学の演習室の環境（クライアント・DBサーバ）を再現？
+# @author: takahiro55555
+
+version: "3"
+
+services:
+  postgres:
+    build: ./postgres
+    container_name: "kite.cs.miyazaki-u.ac.jp"
+    environment:
+      - TZ="Asia/Tokyo"
+      - POSTGRES_PASSWORD=secret
+    volumes:
+      - postgres-db:/var/lib/postgresql/data
+
+  ubuntu:
+    build: ./ubuntu
+    container_name: "prog5-ubuntu"
+    environment:
+      TZ: "Asia/Tokyo"
+    volumes:
+      - ../../:/home/penshu/work/
+    tty:
+      true
+
+volumes:
+  postgres-db:
+    driver: local

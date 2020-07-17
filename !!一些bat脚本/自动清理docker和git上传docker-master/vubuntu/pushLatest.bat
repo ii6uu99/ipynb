@@ -1,0 +1,1 @@
+docker push vinayaksm/vubuntu

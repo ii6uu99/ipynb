@@ -1,0 +1,15 @@
+version: '2'
+services:
+  db:
+    image: mysql:8
+    container_name: mysql-banana
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: banana
+      MYSQL_USER: develop
+      MYSQL_PASSWORD: develop
+    ports:
+      - 33306:3306
+    hostname: banana

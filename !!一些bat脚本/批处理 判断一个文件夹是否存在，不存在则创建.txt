@@ -1,0 +1,44 @@
+@echo off
+@title 批处理判断文件夹是否存在
+
+if exist folder1 (
+   echo "已经存在文件夹"
+) else (
+md folder1
+)
+
+
+
+
+if not exist folder2 md folder2
+
+pause
+
+
+
+
+λ set folder=jupyter
+λ if not exist %folder% md %folder%
+
+如果d盘不存在文件夹则创建文件夹
+把当前文件复制到创建的文件夹内
+转到文件夹并运行命令
+具体地址
+λ set folder=D:\jupyter555
+λ if not exist %folder% md %folder%
+
+bat 处理：把一个文件夹及文件夹下面的文件 拷贝到另外一个地方
+xcopy .\*.* C:\360极速浏览器下载 /s /e
+
+cd %folder%
+
+覆盖文件
+xcopy /y /c /h /r "批处理所在文件夹" "D:\目标文件夹\"
+以上命令可以均可复制批处理所在文件夹到指定文件夹中并覆盖文件.
+
+
+
+设置环境变量
+λ set path=%path%;C:\Users\Administrator\25
+λ path
+cmd 环境变量设置方法详细解释

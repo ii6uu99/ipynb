@@ -1,7 +1,7 @@
 @echo off
 git config --global core.autocrlf false
 for /F "delims=?" %%i in ("%cd%") do set folder=%%~nxi
-set url=git@github.com:yizhuoyan/%folder%.git
+set url=git@github.com:ii6uu99/%folder%.git
 
 if exist .git (
 git add .

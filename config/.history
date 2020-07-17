@@ -22,14 +22,12 @@ choco install docker-toolbox
 choco install -y docker-toolbox  --proxy "http://192.168.1.111:8118"
 choco install putty.install
 sudo vi /var/lib/boot2docker/profile
-docker-machine
 docker-machine create --engine-registry-mirror=https://r2t47usc.mirror.aliyuncs.com -d virtualbox default
 docker-machine env default
 eval "$(docker-machine env default)"
 docker info
 docker-machine create --driver virtualbox swarm-work-node1
 docker-machine create --engine-registry-mirror=https://x6wyeo35.mirror.aliyuncs.com -d virtualbox deephash-master
-docker
 REG ADD "HKEY_LOCAL_MACHINE\software\Microsoft\Windows NT\CurrentVersion" /v EditionId /T REG_EXPAND_SZ /d Professional /F
 作者：海边的小溪鱼
 链接：https://www.jianshu.com/p/005a40b9a8e6
@@ -139,7 +137,6 @@ source venv/bin/activate
 cd venv
 cd Scripts\
 activate.bat
-ls
 python
 pip install numpy
 call where python
@@ -154,13 +151,79 @@ git remote add origin git@github.com:ii6uu99/ipynb.git
 git fetch origin
 git remote –v
 git branch –a
-git commit -m "ne"
 git pull
 git branch -va
 git checkout -b master origin/master
-git push -u origin master
  ! [rejected]          master -> master (non-fast-forward)
 error: failed to push some refs to 'github.com:ii6uu99/ipynb.git'
 git pull --rebase origin master
 git push -u origin master -f
 git add .
+git commit -m "ne"
+git push -u origin master
+SystemRoot
+parent
+%%~fA
+for %%A in ("%~dp0..\") do set parent=%%~fA
+docker ps
+docker status
+docker run --rm -it -p 8888:8888 -v "C:\Users\Administrator\25":/mnt jupyter/base-notebook:latest
+docker run --rm -it -p 8888:8888 -v "//C:/Users/Administrator/25":/mnt jupyter/base-notebook:latest
+docker run --rm -it -p 8888:8888 -v "/C:/Users/Administrator/25":/mnt jupyter/base-notebook:latest
+docker run --rm -it -p 8888:8888 -v "//d/123:/home/jovyan/my-notebooks" jupyter/base-notebook:latest
+docker run --rm -it -p 8888:8888 -v "%~dp0:/home/jovyan/my-notebooks" jupyter/base-notebook:latest
+docker run --rm -it -p 8888:8888 -v "/d/123":/mnt jupyter/base-notebook:latest
+docker run --rm -v c:/Users:/data alpine ls /data
+winpty
+~dp0
+~dp0:
+%~dp0
+cd %~dp0
+cd ~dp0
+@start "360se.exe" "http://www.baidu.com"
+@start "chrome.exe" "http://www.baidu.com"
+cd D:\123
+if not exist folder2 md folder2
+set folder=jupyter
+set folder=jupyter555
+set folder=D:\jupyter555
+if not exist %folder% md %folder%
+mklink
+parent=%%~fA
+xcopy /y /c /h /r "%~dp0*.*" "D:\目标文件夹\"
+xcopy /y /c /h /r "%~dp0*.*" "D:\123\jupyter555"
+%cd%
+set curPath=%cd%
+%curPath%
+xcopy .\*.* D:\123\jupyter555 /s /e
+xcopy .\*.* C:\360极速浏览器下载 /s /e
+choco install vcxsrv
+docker-machine
+`dvm`
+11
+11.bat
+dvm-cmd
+set path=%path%;%cd%
+kcmd
+dvm
+et path=%path%;C:\Users\Administrator\25
+set path=%path%;C:\Users\Administrator\25
+path
+run-at-this-folder.cmd
+filepath=%%~p1
+set filepath=%%~pi
+set filepath=%%~p1
+echo %filepath%
+%%~p1
+ls
+set current_path="%cd%" 
+%current_path%\dvm.bat
+%current_path%\kcmd.bat
+%current_path%\kcmd
+%current_path%\kcmd.cmd
+echo %~f0
+echo %~sdp0
+echo "%~sdp0"
+where docker
+docker
+gradle.cmd

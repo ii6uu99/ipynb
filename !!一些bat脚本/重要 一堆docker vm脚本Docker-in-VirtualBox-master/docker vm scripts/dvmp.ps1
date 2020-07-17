@@ -1,0 +1,1 @@
+& docker-machine.exe env Docker | Invoke-Expression
