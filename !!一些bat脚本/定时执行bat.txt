@@ -1,0 +1,43 @@
+win10开机自启脚本地址
+把bat文件放到下面的文件夹中就可以
+C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp
+这个步骤需要管理员允许，询问时点击确定就可以
+
+
+让bat批处理后台运行,不显示cmd窗口
+
+在你写的批处理文件,开头加上以下三行代码即可
+
+if "%1"=="hide" goto CmdBegin
+start mshta vbscript:createobject("wscript.shell").run("""%~0"" hide",0)(window.close)&&exit
+:CmdBegin
+————————————————
+版权声明：本文为CSDN博主「lp_cq242」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lp_cq242/article/details/102625665
+
+
+
+
+
+批处理（.bat）无限循环，定时，固定时间间隔
+
+情景
+需要固定时间间隔比如5秒运行一个文件，网上查了下最简单的就是用goto语句，如果不加延时那就是死循环，在里面加上延时语句choice /t 5 /d y /n >nul。下面的批处理作用就是每隔5秒屏幕上输出一次jajaja。
+
+@echo off
+
+:start
+echo jajaja
+choice /t 5 /d y /n >nul
+
+goto start
+
+————————————————
+版权声明：本文为CSDN博主「mighty13」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/mighty13/article/details/78110676
+
+
+
+————————————————
+版权声明：本文为CSDN博主「mighty13」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/mighty13/article/details/78110676
