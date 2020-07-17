@@ -15,3 +15,16 @@ git push -u origin master
 fatal: 'origin' does not appear to be a git repository
 fatal: Could not read from remote repository.
 https://blog.csdn.net/huanhuaqian/article/details/81986064?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159490437219195239803202%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=159490437219195239803202&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v3~pc_rank_v3-1-81986064.pc_ecpm_v3_pc_rank_v3&utm_term=fatal%3A+origin+does+not+appear+
+
+
+git pull --rebase origin master
+
+
+关于报错“! [rejected]master -> master (non-fast-forward)”的解决方法
+首先尝试了 命令git push -u origin master -f，然后惊喜地出现了下面错误，不能强制推送到受保护的分支
+
+————————————————
+版权声明：本文为CSDN博主「jeady小五」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/downanddusk/article/details/88344389
+
+
