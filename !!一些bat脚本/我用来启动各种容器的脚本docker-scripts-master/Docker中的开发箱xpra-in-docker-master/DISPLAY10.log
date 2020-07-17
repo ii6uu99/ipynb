@@ -1,0 +1,51 @@
+_XSERVTransmkdir: ERROR: euid != 0,directory /tmp/.X11-unix will not be created.
+Initializing built-in extension Generic Event Extension
+Initializing built-in extension SHAPE
+Initializing built-in extension MIT-SHM
+Initializing built-in extension XInputExtension
+Initializing built-in extension XTEST
+Initializing built-in extension BIG-REQUESTS
+Initializing built-in extension SYNC
+Initializing built-in extension XKEYBOARD
+Initializing built-in extension XC-MISC
+Initializing built-in extension SECURITY
+Initializing built-in extension XINERAMA
+Initializing built-in extension XFIXES
+Initializing built-in extension RENDER
+Initializing built-in extension RANDR
+Initializing built-in extension COMPOSITE
+Initializing built-in extension DAMAGE
+Initializing built-in extension MIT-SCREEN-SAVER
+Initializing built-in extension DOUBLE-BUFFER
+Initializing built-in extension RECORD
+Initializing built-in extension DPMS
+Initializing built-in extension Present
+Initializing built-in extension DRI3
+Initializing built-in extension X-Resource
+Initializing built-in extension XVideo
+Initializing built-in extension XVideo-MotionCompensation
+Initializing built-in extension SELinux
+Initializing built-in extension GLX
+[dix] Could not init font path element /usr/share/fonts/X11/cyrillic, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/100dpi/:unscaled, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/75dpi/:unscaled, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/100dpi, removing from list!
+[dix] Could not init font path element /usr/share/fonts/X11/75dpi, removing from list!
+Xlib:  extension "RANDR" missing on display ":10".
+Xlib:  extension "RANDR" missing on display ":10".
+2017-02-18 21:30:46,111 created unix domain socket: /home/devbox/.xpra/37c7cd8b04e2-10ESC[0m
+2017-02-18 21:30:46,112 created unix domain socket: /var/run/xpra/37c7cd8b04e2-10ESC[0m
+ESC[33m2017-02-18 21:30:47,508 Warning: libvpx ABI version 5 is too old:ESC[0m
+ESC[33m2017-02-18 21:30:47,508  disabling YUV444P support with VP9ESC[0m
+ESC[33m2017-02-18 21:30:48,628 Warning: failed to load the mdns avahi publisher:ESC[0m
+ESC[33m2017-02-18 21:30:48,628  No module named avahiESC[0m
+ESC[33m2017-02-18 21:30:48,628  either fix your installation or use the 'mdns=no' optionESC[0m
+ESC[33m2017-02-18 21:30:48,635 Warning: no X11 RandR support on :10ESC[0m
+2017-02-18 21:30:49,564 D-Bus notification forwarding is availableESC[0m
+2017-02-18 21:30:49,570 xpra X11 version 1.0.3-r15051 64-bitESC[0m
+2017-02-18 21:30:49,570  uid=1000 (devbox), gid=1000 (devbox)ESC[0m
+2017-02-18 21:30:49,570  running with pid 42 on Linux Ubuntu 14.04 trustyESC[0m
+2017-02-18 21:30:49,570  connected to X11 display :10ESC[0m
+2017-02-18 21:30:49,629 xpra is ready.ESC[0m
+2017-02-18 21:30:49,671 7.8GB of system memoryESC[0m
+(END)
