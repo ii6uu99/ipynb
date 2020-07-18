@@ -123,7 +123,6 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 choco install -y @(vagrant)
 choco install typora
 choco list -l --idonly > choco.txt 
-ssh-keygen -t rsa -C "ii6uu99@163.com"
 py -m pip install --user virtualenv
 python main.py
 docker-compose up -d
@@ -146,11 +145,7 @@ cli pip8 pip install helping
 cli pip install helping
 cli ls
 cli sudo.bat
-git branch 
 git remote add origin git@github.com:ii6uu99/ipynb.git
-git fetch origin
-git remote –v
-git branch –a
 git pull
 git branch -va
 git checkout -b master origin/master
@@ -235,3 +230,18 @@ set curr=%%~sI
 curl
 %curr%
 choco install nircmd
+git config --global user.name "ii6uu99"
+git config --global user.email "ii6uu99@163.com"
+ssh-keygen -t rsa -C "ii6uu99@163.com" -y
+ssh-keygen -t rsa -C "ii6uu99@163.com"
+start C:\Users\Administrator\.ssh\id_rsa.pub
+start notepad C:\Users\Administrator\.ssh\id_rsa.pub
+start chrome https://github.com/
+start chrome https://github.com/settings/keys
+start chrome https://github.com/settings/ssh/new
+ssh -T git@github.com
+git branch 
+git remote add origin git@github.com:ii6uu99/ruanjian.git
+git fetch origin
+git remote –v
+git branch –a

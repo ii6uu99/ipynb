@@ -1,0 +1,25 @@
+https://github.wuyanzheshui.workers.dev/darrida/pyv
+
+查看是否安装成功
+where python
+
+
+Python——venv虚拟环境（windows环境下）
+创建虚拟环境
+python -m venv 虚拟环境名（如：zzz）
+
+进入目录
+cd 虚拟环境名/Scripts (如下图)
+
+
+
+激活虚拟环境
+activate.bat
+
+
+
+激活虚拟环境后可以pip install 跟项目用到的包，用 Python **.py 运行。如果有多个项目，就生成多个虚拟环境一一搭配。
+好处：实现了项目环境隔离。
+————————————————
+版权声明：本文为CSDN博主「Dream_per_cent」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/Dream_per_cent/article/details/83447475
