@@ -1,0 +1,42 @@
+爬虫教程
+https://www.tutorialspoint.com/python_web_scraping/python_web_scraping_introduction.htm
+
+各种python库的教程
+https://www.tutorialspoint.com/python_technologies_tutorials.htm
+
+批处理脚本教程
+https://www.tutorialspoint.com/batch_script/batch_script_if_else_statement.htm
+
+正则表达式入门
+https://www.robvanderwoude.com/regexpexp.php
+
+Windows NT 4 .. Windows 10语法
+https://www.robvanderwoude.com/ntfor.php
+
+git更新
+https://github.com/search?q=update+git+language%3A%22bat%22&type=Repositories
+
+
+右键的脚本
+https://github.com/search?l=Batchfile&q=Right+Click&type=Repositories
+
+简单powershell脚本双击启动jupyter notebook
+———————————————
+版权声明：本文为CSDN博主「KeYY1992」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_30162859/article/details/87913874
+
+
+超好用的cmder（WIN10版本安装配置）
+https://www.jianshu.com/p/ef116c6953f6
+
+Markdown: 语法
+https://markdown-zh.readthedocs.io/en/latest/
+
+Typora ---一款简洁的Markdown编辑器
+https://www.cnblogs.com/-guz/p/10258557.html
+
+python教程
+https://github.wuyanzheshui.workers.dev/search?q=Python+Tutorials
+
+jupyter 魔法命令
+https://github.wuyanzheshui.workers.dev/search?q=jupyter+magic
