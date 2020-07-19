@@ -1,0 +1,5 @@
+linux下查找指定后缀的文件
+
+例如查找当前目录下的所有后缀名时.sh或.ipynb的文件
+
+find  .  -type f -regex  ".*\.\(sh\|ipynb\)"
