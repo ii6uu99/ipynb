@@ -1,0 +1,48 @@
+环境变量永久写入注册表
+
+在dos中现有的指令是set，但这个只在当前应用下有效，如果让其一直有效，就需要永久地写入注册表。
+
+在网上找到了一个大写些的一添加JDK环境变量为例的批处理，留在自己的空间做个备份吧！
+
+ 
+
+::os环境:windows 2000,windows xp,
+
+@echo off
+set regpath=hkey_local_machine\system\currentcontrolset\control\session manager\environment
+::系统环境变量注册表值
+
+echo.
+echo =====================================================
+echo                 jdk 系统环境变量设置
+echo =====================================================
+echo.
+
+set /p en=请按 回车键 确认设置开始!
+echo.
+
+:: 只需要在下面手动下设置jdk 安装路径既可
+set javahome=c:\program files\java\jdk1.5.0_06
+
+
+echo 新创建环境变量 java_home=%javahome%
+reg add "%regpath%" /v "java_home" /d "%javahome%" /f
+echo.
+
+echo 新创建环境变量 classpath=%%java_home%%\lib\tools.jar;%%java_home%%%\lib\dt.jar
+reg add "%regpath%" /v "classpath" /d "%%java_home%%\lib\tools.jar;%%java_home%%\lib\dt.jar" /f
+echo.
+
+echo 新追加环境变量 path=%%java_home%%\bin
+for,/f,"skip=4 tokens=1,2,*",%%a,in,('reg query "%regpath%" /v "path"'),do,(
+
+　　reg add "%regpath%" /v "path" /d "%%c;%%java_home%%\bin" /f
+
+　　)
+echo.
+
+color 17
+echo ************ jdk系统环境变量设置 结束! ***********
+echo.
+echo 请按 任意键 退出!
+pause>nul

@@ -13,3 +13,7 @@ setx ANACONDA_64BIT "C:\Users\gyusu\Anaconda3_64"
 将存储库的目录添加到PATH
 
 setx path "%path%;C:\Anaconda-32bit-64bit-easy-shortcut"
+
+setx path "%path%;C:\minconda"
+
+reg add "HKLM\system\controlset\control\session manager\environment" /v Path /t REG_SZ /d C:\minconda

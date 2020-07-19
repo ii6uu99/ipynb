@@ -103,7 +103,6 @@ docker stop $(docker ps -q) & docker rm $(docker ps -aq)
  docker rmi `docker images -q`
  docker rmi $(docker images -q) -f
 jupyter notebook
-conda
 conda instal pip
 conda install pip
 pip install jupyter-vscode-server
@@ -136,7 +135,6 @@ source venv/bin/activate
 cd venv
 cd Scripts\
 activate.bat
-python
 pip install numpy
 call where python
 where python
@@ -203,14 +201,12 @@ kcmd
 dvm
 et path=%path%;C:\Users\Administrator\25
 set path=%path%;C:\Users\Administrator\25
-path
 run-at-this-folder.cmd
 filepath=%%~p1
 set filepath=%%~pi
 set filepath=%%~p1
 echo %filepath%
 %%~p1
-ls
 set current_path="%cd%" 
 %current_path%\dvm.bat
 %current_path%\kcmd.bat
@@ -245,3 +241,18 @@ git remote add origin git@github.com:ii6uu99/ruanjian.git
 git fetch origin
 git remote –v
 git branch –a
+setx path "%path%;C:\minconda"
+ath
+reg add "HKLM\system\controlset\control\session manager\environment" /v Path /t REG_SZ /d C:\minconda
+cd C:\minconda
+set "thispath=%~dp0"
+set "thispath=%thispath:~0,-1%"
+echo 当前文件所在目录路径:%thispath%
+set mypath=%path%
+ls
+conda
+path
+python
+python.exe
+conda install jupyter notebook
+choco install python3

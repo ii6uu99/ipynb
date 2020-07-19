@@ -1,0 +1,66 @@
+https://gitee.com/mo2/linux
+
+    . <(curl -L gitee.com/mo2/linux/raw/2/2)
+bash -c "$(curl -L https://gitee.com/mo2/linux/raw/2/2)"
+
+中文重要
+https://github.com/xiangjianwen/github-termux
+
+
+
+$ apt update
+
+& apt upgrade
+
+$ apt install git
+
+$ apt install python2
+
+$ git clone https://github.com/TechnicalMujeeb/Termux-Lazyscript.git
+
+$ cd Termux-Lazyscript
+
+$ chmod +x *
+
+$ sh setup.sh
+
+
+
+
+来自国光大佬的自动替换源，命令：
+
+sed -i 's@^\(deb.*stable main\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/termux-packages-24 stable main@' $PREFIX/etc/apt/sources.list
+
+sed -i 's@^\(deb.*games stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/game-packages-24 games stable@' $PREFIX/etc/apt/sources.list.d/game.list
+
+sed -i 's@^\(deb.*science stable\)$@#\1\ndeb https://mirrors.tuna.tsinghua.edu.cn/termux/science-packages-24 science stable@' $PREFIX/etc/apt/sources.list.d/science.list
+
+pkg update
+
+
+
+ termux的界面优化
+安装 curl
+
+apt install curl
+下载并运行ohmyzsh
+
+sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
+选择背景色和字体
+
+    Enter a number, leave blank to not to change: 14
+    Enter a number, leave blank to not to change: 6
+想要继续更改挑选配色的话,继续运行脚本来再次筛选:
+
+ ~/termux-ohmyzsh/install.sh
+
+
+
+
+很多在线工具
+https://www.it610.com/tools/index/index.html
+
+
+很好的教程
+https://www.it610.com/
+
