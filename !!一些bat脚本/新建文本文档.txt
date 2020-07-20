@@ -3,3 +3,15 @@
 pushd %1 & for %%i in (.) do set curr=%%~ni
 echo %curr%
 pause
+
+
+在cmd/bat脚本中获取当前脚本文件所在目录
+————————————————
+版权声明：本文为CSDN博主「小宇飞刀」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/xieyunc/article/details/80471107
+
+
+
+（win10）上代码：
+cd /d %~dp0
+切换到当前bat文件所在目录

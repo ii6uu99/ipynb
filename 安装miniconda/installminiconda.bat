@@ -11,6 +11,9 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/f
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
 conda config --set show_channel_urls yes
 
+echo 升级下conda
+conda update conda
+
 echo 通过conda安装pip更快
 conda install pip -y
 
@@ -21,6 +24,9 @@ pip3 config set install.trusted-host mirrors.aliyun.com
 
 echo 安装jupyter notebook
 pip3 install jupyter notebook -y
+
+
+
 
 pause
 

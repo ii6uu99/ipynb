@@ -1,0 +1,8 @@
+
+echo 安装nbextensions
+pip install --user jupyter_contrib_nbextensions -i https://pypi.mirrors.ustc.edu.cn/simple
+jupyter contrib nbextension install --user
+安装nbextensions_configurator
+pip install --user jupyter_nbextensions_configurator 
+jupyter nbextensions_configurator enable --user
+安装完成后，启动Jupyter，可以看见标签页多了一个Nbextensions标签

@@ -23,3 +23,27 @@ assoc .md=jupyter& ftype jupyter=cmd.exe /c jupyter-notebook "%1"
 
 .py关联为jupyter打开
 assoc .py=jupyter& ftype jupyter=cmd.exe /c jupyter-notebook "%1"
+
+
+---------------------------------------------------------
+
+出错
+拒绝访问。
+处理: .whl 时出错。
+没有找到文件类型 'jupyter' 或与其相关的开放式命令。
+
+只需要 直接运行
+pip install nbopen
+python -m nbopen.install_win
+我的系统是 win10 ，对应的ananconda3 4.2.0
+执行完上面两条命令以后 还需要 先打开 jupyter note ,然后 打开的时候选择 python 打开方式，选择成默认打开方式。
+后面再打开 ipynb 文件只需要 双击就能够打开。
+————————————————
+版权声明：本文为CSDN博主「人道主义」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/u012743859/article/details/78770135
+
+-----------------------------------------------
+
+另一种方法 双击打开ipynb文件
+
+
