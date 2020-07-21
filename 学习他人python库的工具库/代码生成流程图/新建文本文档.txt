@@ -5,3 +5,37 @@ pycallgraph -这个库可以把你的Python 应用的流程(调用图)进行可�
 https://github.com/gak/pycallgraph
 教程 https://blog.csdn.net/u010751000/article/details/106988825
 
+
+------------------------------------------------------------------------
+结合学习
+重要
+在线可视化执行
+最大的作用就是将代码可视化！可视化！可视化！
+http://www.pythontutor.com/visualize.html#mode=edit
+http://www.pythontutor.com/visualize.html#mode=edit
+教程
+https://www.mmuaa.com/post/729fe38264bbb288.html
+https://www.jianshu.com/p/c1e28c07591c
+
+
+大多是是函数，要调用才能有可视化图
+1000个常用的Python库和示例代码
+https://blog.csdn.net/beyond_f/article/details/74978212
+https://www.programcreek.com/python/
+列表
+https://www.programcreek.com/python/index/module/list
+
+------------------------------------------------------------------------
+Skulpt是Python 的完全浏览器内实现。
+http://skulpt.org/
+
+
+
+
+
+
+
+
+
+
+
