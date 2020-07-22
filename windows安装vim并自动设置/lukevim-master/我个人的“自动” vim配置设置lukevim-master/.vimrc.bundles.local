@@ -1,0 +1,21 @@
+
+" Selecting only the plugins I want from splf13 .vimrc.bundles
+let g:spf13_bundle_groups=['general', 'neocomplete', 'programming', 'ruby', 'python', 'javascript', 'html']
+
+"Only way I can find to disable auto-pairs
+UnBundle 'jiangmiao/auto-pairs'
+
+"Bundle 'vim-scripts/YankRing.vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'vim-scripts/project.tar.gz'
+Bundle 'vim-scripts/DfrankUtil'
+Bundle 'vim-scripts/vimprj'
+Bundle 'vim-scripts/SingleCompile'
+Bundle 'vim-scripts/vcscommand.vim'
+Bundle 'vim-scripts/csv.vim'
+Bundle 'vim-scripts/VisIncr'
+Bundle 'vim-scripts/vim-misc'
+Bundle 'vim-scripts/easytags.vim'
+Bundle 'MarcWeber/SmartTag'
+Bundle 'octol/vim-cpp-enhanced-highlight'
+

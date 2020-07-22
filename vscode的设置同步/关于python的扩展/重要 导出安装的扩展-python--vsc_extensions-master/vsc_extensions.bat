@@ -1,0 +1,16 @@
+code --install-extension aaron-bond.better-comments
+code --install-extension CoenraadS.bracket-pair-colorizer-2
+code --install-extension DavidAnson.vscode-markdownlint
+code --install-extension ffaraone.pyfilesgen
+code --install-extension johnpapa.vscode-peacock
+code --install-extension k--kato.intellij-idea-keybindings
+code --install-extension karigari.chat
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-python.python
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension ms-vsliveshare.vsliveshare-audio
+code --install-extension ms-vsliveshare.vsliveshare-pack
+code --install-extension njpwerner.autodocstring
+code --install-extension RandomFractalsInc.vscode-data-preview
+code --install-extension ryu1kn.partial-diff
+code --install-extension VisualStudioExptTeam.vscodeintellicode

@@ -1,0 +1,139 @@
+{
+  // --- FLOW ---
+
+  // Use flow from node_modules.
+  "flow.useNPMPackagedFlow": true,
+
+  // --- ESLINT ---
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html"
+  ],
+
+  // --- VIM ---
+
+  // Use jk for file explorer navigation.
+  "workbench.list.keyboardNavigation": "simple",
+
+  // Enable easymotion.
+  "vim.easymotion": true,
+
+  // Enable camelCaseMotion.
+  "vim.camelCaseMotion.enable": true,
+
+  // Delegate keybindings to be handled by VSCode instead of by Vim plugin.
+  "vim.handleKeys": {
+      "<C-q>": false,
+  },
+
+  // Yank to the system clipboard by default.
+  "vim.useSystemClipboard": true,
+
+  // --- TODO HIGHLIGHT ---
+  "todohighlight.keywords": [
+    {
+      "text": "TODO:",
+      "color": "#ffffff",
+      "fontWeight": "900",
+      "backgroundColor": "#0f77ff",
+    },
+    {
+      "text": "NOTE:",
+      "color": "#111111",
+      "fontWeight": "900",
+      "backgroundColor": "#ffdd00",
+    },
+    {
+      "text": "HACK:",
+      "color": "#ffdd00",
+      "fontWeight": "900",
+      "backgroundColor": "#ff2020",
+    },
+  ],
+
+  // --- EDITOR ---
+
+  // Don't accept suggestions when pressing dot.
+  "editor.acceptSuggestionOnCommitCharacter": false,
+
+  // Enable snippets with tab completion.
+  "editor.tabCompletion": "on",
+
+  // Controls the font family.
+  "editor.fontFamily": "Input Mono Narrow, monospace",
+
+  // Don't validate js or ts.
+  "javascript.validate.enable": false,
+
+  // Trim whitespace, but not for markdown.
+  "files.trimTrailingWhitespace": true,
+  "[markdown]": {
+      "files.trimTrailingWhitespace": false,
+  },
+
+  // Don't send telemetry.
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+
+  // Don't use this window.
+  "explorer.openEditors.visible": 0,
+
+  // Automate formatting.
+  "files.insertFinalNewline": true,
+
+  // Who uses a mouse anyways?
+  "editor.dragAndDrop": false,
+
+  // Don't recommend.
+  "extensions.ignoreRecommendations": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+
+  // Don't force 'keep open'.
+  "workbench.editor.enablePreview": false,
+  "workbench.startupEditor": "newUntitledFile",
+
+  // Use SCSS to reduce errors in linting CSS.
+  "files.associations": {
+    "*.css": "scss",
+    "*.fnl": "lisp"
+  },
+
+  // FSharp
+  "FSharp.lineLens.enabled": "replaceCodeLens",
+  "FSharp.lineLens.prefix": "  : ",
+
+  // Disable annoying code lens.
+  "editor.codeLens": false,
+  "editor.renderWhitespace": "all",
+  "workbench.tips.enabled": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "csharp.referencesCodeLens.enabled": false,
+  "csharp.testsCodeLens.enabled": false,
+  "merge-conflict.codeLens.enabled": false,
+  "editor.quickSuggestions": false,
+  "editor.quickSuggestionsDelay": 30,
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+
+  // C# & Omnisharp
+  "omnisharp.path": "latest",
+
+  // Whitespace
+  "editor.tabSize": 4,
+  "[json]": {
+    "editor.tabSize": 2,
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+  },
+  "workbench.colorTheme": "Night Owl (No Italics)",
+  "mssql.connections": [
+    {
+      "connectionString": "Server=(local);Database=BarrierVision;Trusted_Connection=True;",
+      "profileName": "BarrierVision",
+      "password": ""
+    }
+  ],
+  "workbench.list.automaticKeyboardNavigation": false,
+}

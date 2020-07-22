@@ -1,0 +1,190 @@
+// Platzieren Sie Ihre Einstellungen in dieser Datei, um die Standardeinstellungen zu überschreiben.
+{
+
+    //Workbench
+    "workbench.editor.showTabs": true,
+    "workbench.editor.enablePreview": false, //nerviges automatisches Schließen von Dateien
+    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.colorTheme": "Visual Studio Dark",
+
+    //textmarker
+    "textmarker.useHighlightColorOnRuler" : true,
+
+    //Zen Mode
+    "zenMode.fullScreen": true,
+    "zenMode.hideStatusBar": false,
+    "zenMode.hideTabs": false,
+
+    //Files
+    "files.encoding": "windows1252",
+    "[java]": {
+        "files.encoding": "utf8"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.associations": {
+        "*.sql": "plsql",
+        "*.pkg": "plsql",
+        "*.pks": "plsql",
+        "*.trg": "plsql",
+        "*.tps": "plsql",
+        "*.tpb": "plsql",
+        "*.lst*": "csv (semicolon)"
+    },
+
+    //extensions
+    "extensions.ignoreRecommendations": true,
+
+    //Window
+    "window.openFilesInNewWindow": "off", //fürs Öffnen von csv Dateien aus Batch-Script
+    "window.zoomLevel": 0,
+
+    //Editor
+    "editor.tabSize": 2,
+    "editor.useTabStops": true,
+    "editor.minimap.enabled": true,
+    "editor.stablePeek": true,
+    "editor.minimap.renderCharacters": true,
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.maxColumn": 80,
+    "editor.wordWrap": "off",
+    "editor.renderIndentGuides": true,
+    "editor.cursorBlinking": "solid",
+    "editor.renderWhitespace": "none",
+    "editor.renderControlCharacters": true,
+    //"editor.lineNumbers": "relative",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoClosingBrackets": "never",
+    "editor.rulers": [
+        40, 80, 100, 120
+    ],
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    //terminal
+    "terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+
+    //indent  highlighter
+    "indentRainbow.ignoreErrorLanguages": [
+        "plaintext", "plsql"
+    ],
+
+    //diff
+    "diffEditor.renderSideBySide": true,
+
+    //Explorer
+    "explorer.openEditors.visible": 20,
+
+    //Code Runner (TODO)
+    "code-runner.fileDirectoryAsCwd": true,
+    "code-runner.executorMap": {
+        /*
+            $workspaceRoot: The path of the folder opened in VS Code
+            $dir: The directory of the code file being run
+            $dirWithoutTrailingSlash: The directory of the code file being run without a trailing slash
+            $fullFileName: The full name of the code file being run
+            $fileName: The base name of the code file being run, that is the file without the directory
+            $fileNameWithoutExt: The base name of the code file being run without its extension
+        */
+        "javascript": "node",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "gcc $fullFileName && ./a.out",
+        "cpp": "g++ $fullFileName && ./a.out",
+        "php": "php",
+        "python": "python",
+        "perl": "perl",
+        "ruby": "ruby",
+        "go": "go run",
+        "lua": "lua",
+        "groovy": "groovy",
+        "powershell": "powershell -ExecutionPolicy ByPass -File",
+        "bat": "",
+        "shellscript": "bash",
+        "fsharp": "fsi",
+        "csharp": "scriptcs",
+        "vbscript": "cscript //Nologo",
+        "typescript": "ts-node",
+        "coffeescript": "coffee",
+        "scala": "scala",
+        "swift": "swift",
+        "julia": "julia",
+        "crystal": "crystal",
+        "ocaml": "ocaml",
+        "r": "Rscript",
+        "plsql": "echo exit | sqlplus -S /nolog @$fullFileName"
+    },
+
+    //line endings
+    "lineEndings.renderLineEndings" : false,
+
+    //Git Project Manager
+    "gitProjectManager.baseProjectsFolders": [
+        "%USERPROFILE%\\Documents\\projekte",
+        "%APPDATA%\\Code\\User"
+    ],
+
+    //Bookmarks
+    "bookmarks.navigateThroughAllFiles": true,
+    "bookmarks.saveBookmarksInProject": true,
+    "bookmarks.treeview.visible": false,
+
+    //Find Related Files
+    "findrelated.autoOpen": false, //???
+    "findrelated.applyRulesets": [
+        "PLSQL"
+    ],
+    "findrelated.rulesets": [
+        {
+            "name": "PLSQL",
+            "rules": [
+
+                { //-------Package Body/Spec ------
+                    "pattern": "(.*)\\.pks$",
+                    "locators": ["$1.pkb"]
+                },
+                {
+                    "pattern": "(.*)\\.pkb$",
+                    "locators": ["$1.pks"]
+                },
+                //-------Type Body/Spec ------------
+                {
+                    "pattern": "(.*)\\.tps$",
+                    "locators": ["$1.tpb"]
+                },
+                {
+                    "pattern": "(.*)\\.tpb$",
+                    "locators": ["$1.tps"]
+                }
+            ]
+        }
+    ],
+    "terminal.external.windowsExec": "C:\\Windows\\System32\\cmd.exe",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": true,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
+        "suppressWelcomeNotice": false
+    },
+    "gitlens.keymap": "alternate",
+
+    //vim
+    "vim.disableExtension": true,
+    "vim.useSystemClipboard": true,
+    "vim.easymotion": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["<leader>","<space>"], "commands": [ { "command": "workbench.action.showCommands" } ] },
+    ],
+    "vim.insertModeKeyBindings": [
+        { "before": [ "j", "j" ], "after": [ "<Esc>" ] }
+    ],
+    "git.enableSmartCommit": true,
+    "breadcrumbs.enabled": true
+}

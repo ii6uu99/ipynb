@@ -1,0 +1,159 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quickOpenView"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-extension.vim_winCtrlQ",
+        "when": "editorTextFocus && vim.active && vim.use<C-q> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quickOpenNavigateNextInViewPicker",
+        "when": "inQuickOpen && inViewsPicker"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "-workbench.action.quickOpenNavigatePreviousInViewPicker",
+        "when": "inQuickOpen && inViewsPicker"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+f4",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+m ctrl+a",
+        "command": "explorer.newFile"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    {
+        "key": "ctrl+m ctrl+d",
+        "command": "deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+        "key": "shift+delete",
+        "command": "-deleteFile",
+        "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+m ctrl+s",
+        "command": "explorer.newFolder"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-list.focusPageUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-cursorUndo",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-list.focusPageDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-editor.action.addSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+m ctrl+f",
+        "command": "editor.action.formatSelection",
+        "when": "editorHasSelection && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+f",
+        "command": "-editor.action.formatSelection",
+        "when": "editorHasSelection && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "command": "editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+a",
+        "command": "-editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k m",
+        "command": "-workbench.action.editor.changeLanguageMode"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "-editor.action.toggleTabFocusMode"
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "-workbench.actions.view.problems"
+    },
+    {
+        "key": "ctrl+k ctrl+m",
+        "command": "-workbench.extensions.action.showRecommendedKeymapExtensions"
+    },
+    {
+        "key": "ctrl+m ctrl+k",
+        "command": "workbench.action.openGlobalKeybindings"
+    },
+    {
+        "key": "ctrl+k ctrl+s",
+        "command": "-workbench.action.openGlobalKeybindings"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeWindow",
+        "when": "!editorIsOpen && !multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+m ctrl+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "enter",
+        "command": "-acceptSelectedSuggestionOnEnter",
+        "when": "acceptSuggestionOnEnter && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+    },
+    {
+        "key": "ctrl+shift+q",
+        "command": "workbench.action.closeOtherEditors"
+    }
+]

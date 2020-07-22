@@ -1,0 +1,9 @@
+* text=auto !eol
+/.vimrc.before.local -text
+/.vimrc.bundles.local -text
+/.vimrc.local -text
+/ctags.cnf -text
+/idlang.vim -text
+/setupvim.cmd -text
+/setupvim.sh -text
+/spf13-vim-windows-install.cmd -text

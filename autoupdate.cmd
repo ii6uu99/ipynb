@@ -17,6 +17,7 @@ git remote add github %url%
 git pull origin master
 git add .
 git commit -m init
+type nul>README.md
 )
 git push -u origin master 
 

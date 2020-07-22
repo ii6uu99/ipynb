@@ -1,0 +1,174 @@
+"---------------------------------------------------------------------------
+" General env
+"---------------------------------------------------------------------------
+let g:solarized_termtrans=0
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
+set listchars=tab:>\ ,trail:.,extends:#,nbsp:.
+autocmd Filetype c,cpp set noexpandtab
+" fix stupid arrow key problem
+imap <ESC>oA <ESC>ki
+imap <ESC>oB <ESC>ji
+imap <ESC>oC <ESC>li
+imap <ESC>oD <ESC>hi
+
+"---------------------------------------------------------------------------
+" User functions
+"---------------------------------------------------------------------------
+"Function to underline a line
+"from http://vim.wikia.com/wiki/Underline_using_dashes_automatically
+function! s:Underline(chars)
+  let chars = empty(a:chars) ? '-' : a:chars
+  let nr_columns = virtcol('$') - 1
+  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+  put =strpart(uline, 0, nr_columns)
+  call cursor(line('.'), col('$'))
+endfunction
+command! -nargs=? Underline call s:Underline(<q-args>)
+
+function! s:Overline(chars)
+  let chars = empty(a:chars) ? '-' : a:chars
+  let nr_columns = virtcol('$') - 1
+  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
+  -1put =strpart(uline, 0, nr_columns)
+  call cursor(line('.'), col('$'))
+endfunction
+command! -nargs=? Overline call s:Overline(<q-args>)
+
+function! s:OverUnderline(chars)
+  call s:Overline(a:chars)
+  call cursor(line('.') + 1, col('.'))
+  call s:Underline(a:chars)
+endfunction
+command! -nargs=? OverUnderline call s:OverUnderline(<q-args>)
+
+function! FormatBufferList()
+  redir => bufflist
+  buffers
+  redir END
+  " return join(map(split(bufflist, '\n'), "substitute(v:val, '^\\([^\"]*\\)\"\\([a-zA-Z0-\\.]\/\\)*\\([^\"]\\)\\.*$', '\\1\\3', '')"))
+  return join(map(split(bufflist, '\n'), "substitute(v:val, '^\\([^\"]*\\)\"\\([a-zA-Z0-9_~\\.]*\/\\)*\\([^\"]*\\).*', '\\1\\3', '')"), "\n")
+endfunction
+
+"---------------------------------------------------------------------------
+" User key binding
+"---------------------------------------------------------------------------
+" ESC replacement
+
+
+"list & search buffers from normal/vis & insert mode
+"Replaced by ctrlP
+noremap <C-[><C-[> <ESC>
+inoremap <C-[><C-[> <ESC>
+
+" noremap <C-b>c <ESC>:echo FormatBufferList()<CR>:buffer<Space>
+" inoremap <C-b>c <ESC>:echo FormatBufferList()<CR>:buffer<Space>
+noremap <C-b>c <ESC>:CtrlPBuffer<CR>
+inoremap <C-b>c <ESC>:CtrlPBuffer<CR>
+"list & search MRU list from normal/vis & insert mode
+noremap <C-b>m <ESC>:CtrlPMRU<CR>
+inoremap <C-b>m <ESC>:CtrlPMRU<CR>
+"change to last buffer from normal/vis & insert mode
+noremap <C-b>b <ESC>:b#<CR>
+inoremap <C-b>b <ESC>:b#<CR>
+"underline the current line"
+noremap <Leader>h <ESC>:Underline<Space>
+noremap <Leader>hh <ESC>:OverUnderline<Space>
+
+
+"---------------------------------------------------------------------------
+" User key bindings for plugins/bundles
+"---------------------------------------------------------------------------
+" YankRing
+" nnoremap <silent> <Leader>yr :YRGetElem<CR>
+" CtrlP
+" let g:ctrlp_map = '<m-p>'
+
+
+"---------------------------------------------------------------------------
+" Settings for plugins/bundles
+"---------------------------------------------------------------------------
+" cpp-advanced-highlight
+let g:cpp_class_scope_highlight = 1
+
+" ctrlp-funky
+let g:ctrlp_funky_syntax_highlight = 1
+
+" Limit version control diff check only to those I use
+let g:signify_vcs_list = [ 'svn', 'git', 'hg' ]
+
+" Reduce clutter on airline
+"   Remove hunk display this info comes from signify
+"   Reduce length of syntastic and whitespace error section
+"   Stop bufferline from printing to file display section
+let g:airline_powerline_fonts=0
+let g:airline#extensions#hunks#enabled = 0
+let g:syntastic_stl_format = '%E{Err:%fe#%e}%B{, }%W{Warn:%fw#%w}'
+let g:airline#extensions#whitespace#trailing_format = 't:%s'
+let g:airline#extensions#whitespace#mixed_indent_format = 'i:%s'
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline_left_sep='>'
+let g:airline_right_sep='<'
+
+" Stop bufferline echoing to command window, which requires me to hit enter to
+" dismiss
+let g:bufferline_echo = 0
+
+" Turn off autoclose
+let g:autoclose_on = 0
+
+" Set up cscope
+if has("cscope")
+    set csprg=/usr/bin/cscope
+    set cscopetag
+    set csto=0
+    set cspc=4
+    set cst
+    set nocsverb
+    " add any database in current directory
+    if filereadable("cscope.out")
+        cs add cscope.out
+    " else add database pointed to by environment
+    elseif $CSCOPE_DB != ""
+        cs add $CSCOPE_DB
+    endif
+    set csverb
+endif
+
+" Slow down easytag updating
+let g:easytags_updatetime_min = 10000
+" easytag support project specific files
+let g:easytags_dynamic_files = 1
+let g:easytags_include_members = 1
+let g:easytags_auto_highlight = 0
+" Send easytag updates into background
+let g:easytags_async = 1
+
+let g:neocomplcache_enable_insert_char_pre = 1
+let g:tagbar_autofocus = 1
+let g:tagbar_expand = 1
+let g:indexer_ctagsCommandLineOptions = "--c++-kinds=+p+l --fields=+iaS --extra=+q --languages=c++,c,python,java,IDL"
+let g:easytags_opts = ['--c++-kinds=+p+l --fields=+iaS --extra=+q --languages=c++,c,python,java,IDL']
+let g:CSApprox_loaded = 1
+if version < 703
+    let g:loaded_numbers = 1
+else
+    nnoremap <F3> :NumbersToggle<CR>
+endif
+let g:indent_guides_start_level = 1
+let g:NERDSpaceDelims = 1
+let g:proj_flags="imstg"
+
+"---------------------------------------------------------------------------
+" programming languages configuration
+"---------------------------------------------------------------------------
+" IDL (Interactive Data Language) for tagbar
+let g:tagbar_type_idlang = {
+    \ 'ctagstype' : 'IDL',
+    \ 'kinds'     : [
+        \ 'p:procedure',
+        \ 'f:function'
+    \ ]
+\}
+
+

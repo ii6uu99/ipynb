@@ -1,0 +1,59 @@
+// Platzieren Sie Ihre Tastenzuordnungen in dieser Datei, um die Standardwerte zu überschreiben.
+[
+
+  {
+    "key": "shift+enter",
+    "command": "extension.jumpy-word",
+    "when": "editorTextFocus"
+  },
+  {
+    "command": "toggleVim",
+    "key": "ctrl+k ctrl+v"
+  }
+  //  {"key": "ctrl+shift+alt+l", "command": "bookmarks.toggle"},
+//  {
+//      "key": "j",
+//      "command": "list.focusDown",
+//      "when": "listFocus"
+//  },
+//  {
+//      "key": "k",
+//      "command": "list.focusUp",
+//      "when": "listFocus"
+//  },
+//  {
+//      "key": "enter",
+//      "command": "list.select",
+//      "when": "explorerViewletVisible && filesExplorerFocus"
+//  },
+//  {
+//      "key": "o",
+//      "command": "list.toggleExpand",
+//      "when": "listFocus"
+//  },
+//  {
+//      "key": "y",
+//      "command": "filesExplorer.copy",
+//      "when": "explorerViewletVisible && filesExplorerFocus"
+//  },
+//  {
+//      "key": "p",
+//      "command": "filesExplorer.paste",
+//      "when": "explorerViewletVisible && filesExplorerFocus"
+//  },
+//  {
+//      "key": "d",
+//      "command": "moveFileToTrash",
+//      "when": "explorerViewletVisible && filesExplorerFocus"
+//  },
+//  {
+//      "key": "i",
+//      "command": "explorer.newFile",
+//      "when": "explorerViewletVisible && filesExplorerFocus"
+//   },
+//   {
+//       "key": "space",
+//       "command": "workbench.action.showCommands",
+//       "when": "explorerViewletVisible && filesExplorerFocus"
+//}
+]
