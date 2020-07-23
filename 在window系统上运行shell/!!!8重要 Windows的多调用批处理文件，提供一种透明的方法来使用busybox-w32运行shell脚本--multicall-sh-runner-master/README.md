@@ -2,6 +2,22 @@ https://github.com/mr-south-guo/multicall-sh-runner
 
 # 多呼Sh跑步者
 
+
+
+重新构造一个思路
+
+在右键添加两个选项：运行shell，以管理员身份运行shell
+
+复制当前这个shell文件并改名为  储存在另一个文件夹的*.sh名，复制到另一个文件夹并
+
+以普通身份运行
+
+或以管理员身份运行
+
+
+
+
+
 ## 描述
 
 shell脚本文件   名.sh文件，修改为 名.cmd,以普通用户运行调用shell脚本文件
@@ -42,6 +58,8 @@ shell脚本文件   名.sh文件，修改为 名.cmd,以普通用户运行调用
     - 它已重命名`busybox64.exe`（64位）以执行sh脚本。
     - 您可以从[busybox-w32](http://frippery.org/busybox/)下载最新版本或32位版本。
     - http://frippery.org/busybox/
+    - https://github.com/realthunder/busybox-w32
+    - https://github.com/witwall/busybox-w32     127个命令bat
     - busybox-w32是BusyBox到Microsoft Windows WIN32 API的端口。它在单个独立的本机可执行文件中将BusyBox功能的子集引入Windows
 - 
     - 此文件是**必填**文件，du。
@@ -52,9 +70,10 @@ shell脚本文件   名.sh文件，修改为 名.cmd,以普通用户运行调用
     ```
 
     - 一个微小的开源工具来以管理员身份运行命令，从[这里](http://code.kliu.org/misc/elevate/)。
+    - http://code.kliu.org/misc/elevate/
     - 该文件是**可选的**。如果您不打算使用“以管理员身份自动运行”功能，则不需要它。（您可以随时启动*亚军*手动为管理员。）
-    - 它可以在同一个目录下*亚军*，还是在`PATH`。
-
+- 它可以在同一个目录下*亚军*，还是在`PATH`。
+  
 - ```
     hardlink-runner.cmd
     ```

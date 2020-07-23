@@ -1,0 +1,6 @@
+批处理复制文件重命名并覆盖
+
+bash 的mv 文件名.sh runshell的路径的改名后的.sh
+
+cmd 的cp
+copy d:\test.txt+d:\abc.txt d:\test\test.txt
