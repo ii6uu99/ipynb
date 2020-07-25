@@ -1,0 +1,40 @@
+wsl终端
+https://github.com/mskyaxl/wsl-terminal
+下载地址
+https://github.com/mskyaxl/wsl-terminal/releases/tag/v0.9.2
+
+wsl-terminal 支持如下功能：
+优秀的兼容性（中文显示/输入、 24 位颜色、命令输出等都正常了）。
+体积小巧，压缩包仅 1.7 M 多，解压后不到 10 M 。
+配置简单， mintty 可以直接在标题栏右键配置， wsl-terminal 的配置文件也很简单。
+可以直接在资源管理器右键打开终端模拟器并定位到当前目录。
+可以将 .sh/.py/.pl 脚本关联到用 wsl-terminal 运行。
+可以将文本文件关联到用 wsl-terminal 里的 vim 运行。
+支持 tmux ，可以在 tmux 里打开新目录，恢复已有的 tmux 会话等。
+支持在 WSL 里直接运行 Windows 程序。
+使用方法：
+
+在 https://github.com/goreliu/wsl-terminal/releases 下载 7z 格式的发布包。
+解压后，直接运行 open-wsl.exe 即可在当前目录打开（可以关联到快捷键）。
+可以运行 tools/add-open-wsl-here-menu.js 在资源管理器右键菜单里添加一个 Open WSL Here 菜单（tools/remove-open-wsl-here-menu.js 删除菜单）。
+可以修改 .sh/.py/.pl/.php 等各种脚本的打开方式为 run-wsl-file.exe ，双击就可以打开。如果需要看结果的话，记得脚本最后加个 sleep 或者 read 。
+可以修改文本文件的打开方式为 vim.exe ，双击就可以用 WSL 里的 vim 打开编辑。
+如果想做 WSL 里边运行 Windows 的软件，运行 outbash-daemon.js ，然后把 bin 里的 wrun 、wstart 、wcmd 复制到 /usr/local/bin （可以直接运行 install_cbwin.sh ），然后 wstart notepad 就可以打开记事本了。cbwin 使用文档： https://github.com/xilun/cbwin
+如果需要使用 tmux，在编辑文件里启用 use_tmux 即可。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+start http://www.mocihan.ml/archives.html
