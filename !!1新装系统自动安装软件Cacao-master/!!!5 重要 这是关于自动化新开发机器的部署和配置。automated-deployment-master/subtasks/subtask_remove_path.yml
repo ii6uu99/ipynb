@@ -1,0 +1,10 @@
+- name: remove {{ extra_path }} from path
+  become: true
+  vars:
+    extra_path: "{{ extra_path }}"
+  lineinfile:
+    dest=/etc/environment
+    state=present
+    backrefs=yes
+    regexp='PATH="(.*)(\:\/{{ extra_path }})(.*)"$'
+    line='PATH="\1\3"'

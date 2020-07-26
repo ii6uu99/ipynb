@@ -1,7 +1,0 @@
-Windows Registry Editor Version 5.00
-
-[HKEY_CLASSES_ROOT\directory\background\shell\Jupyter Lab Here]
-"icon"="C:\\Users\\xxxx\\python\\3.6.8\\Lib\\site-packages\\notebook\\static\\favicon.ico"
-
-[HKEY_CLASSES_ROOT\directory\background\shell\Jupyter Lab Here\command]
-@="C:\\Users\\xxxx\\python\\3.6.8\\Scripts\\jupyter-lab.exe"

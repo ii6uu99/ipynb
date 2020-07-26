@@ -1,0 +1,10 @@
+
+安装桌面
+sudo apk update
+sudo apk add -y curl
+bash -c "$(curl -L l.tmoe.me)"
+
+安装zsh
+sudo apk update
+sudo apk add -y wget
+bash -c "$(wget -qO- https://gitee.com/mo2/zsh/raw/master/zsh.sh)"

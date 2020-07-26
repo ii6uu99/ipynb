@@ -1,0 +1,11 @@
+
+https://code.visualstudio.com/docs/remote/wsl
+
+从WINDOWS命令提示符
+要直接从Windows提示符下打开WSL窗口，请使用--remote命令行参数：
+
+code --remote wsl+<wsl的linux名字> <在WSL-alpine的路径>
+
+例如： code --remote wsl+Ubuntu /home/jim/projects/c
+
+code --remote wsl+Alpine

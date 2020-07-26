@@ -1,0 +1,7 @@
+wsl --unregister <DistributionName>
+
+
+您可以使用以下命令（来自W10 1903）来重置已安装的所有发行版：
+
+wsl --unregister <DistributionName>
+然后，您可以通过在Windows应用商店中找到发行版并单击“启动”来重新安装发行版。

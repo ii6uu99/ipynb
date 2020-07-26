@@ -1,0 +1,3 @@
+"C:\Windows\System32\cmd.exe" "--working-dir" "%v." "/k jupyter notebook"
+
+@="cmd.exe python D:\miniconda\pkgs\notebook-5.0.0-py27_0\Scripts\jupyter-notebook-script.py"

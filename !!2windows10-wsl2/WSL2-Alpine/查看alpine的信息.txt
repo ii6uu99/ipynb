@@ -1,0 +1,3 @@
+
+查看alpine的版本信息
+cat /etc/os-release

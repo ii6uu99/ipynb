@@ -1,0 +1,7 @@
+重启 Windows 10 子系统（WSL) ubuntu
+WSL 子系统是基于 LxssManager 服务运行的。
+只需要将 LxssManager 重启即可。
+可以做成一个 bat 文件。
+
+net stop LxssManager
+net start LxssManager

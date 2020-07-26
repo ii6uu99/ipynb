@@ -1,0 +1,4 @@
+查看
+wslconfig /l
+
+wslconfig /s wsl系统名

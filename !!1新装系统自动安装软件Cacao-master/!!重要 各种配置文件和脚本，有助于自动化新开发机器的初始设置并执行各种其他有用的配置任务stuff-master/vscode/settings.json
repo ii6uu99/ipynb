@@ -1,0 +1,73 @@
+{
+    "editor.rulers": [100],
+    "editor.minimap.maxColumn": 100,
+    "editor.minimap.renderCharacters": true,
+    "editor.detectIndentation": false,
+    "editor.smoothScrolling": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.lineNumbers": "relative",
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "terminal.integrated.fontFamily": "Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontSize": 14,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": false,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before":["Esc"],
+            "after":[],
+            "commands": [
+                {
+                    "command": ":nohl"
+                }
+            ]
+        },
+        {
+            "before":[";"],
+            "after":[":"]
+        },
+        {
+            "before":["f"],
+            // "after":["<leader>", "<leader>", "s"]
+            "after":[],
+            "commands":[
+                {
+                    "command":"findThenJump.initiate"
+                }
+            ]
+        }
+        //{
+        //    "before":["u"],
+        //    "after":[],
+        //    "commands":[
+        //       {
+        //             "command": "cursorUndo",
+        //             "args":[]
+        //         }
+        //     ]
+        // }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys":{
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-y>": false
+        //"<C-z>": false,
+        //"<C-c>": false,
+        //"<C-v>": false,
+        //"<C-x>": false,
+        //"<C-n>": false
+    },
+    "window.zoomLevel": 0,
+    "window.titleBarStyle": "custom",
+    "explorer.confirmDelete": false,
+    "workbench.colorTheme": "Visual Studio Light",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.activityBar.visible": true,
+    "editor.minimap.enabled": false,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+}

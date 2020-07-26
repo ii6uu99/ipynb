@@ -1,0 +1,5 @@
+docker run --rm -it -p 80:80/tcp -v $(pwd):/home/jupyter viacava/jupyter-notebook:latest
+
+
+
+https://github.com/viacava/jupyter-notebook

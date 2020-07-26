@@ -1,0 +1,16 @@
+https://chocolatey.org/install
+
+
+首先，请确保您使用的是管理外壳程序 -您也可以非管理员身份安装，请查看非管理员安装。
+使用powershell.exe安装
+
+注意：在运行任何脚本之前，请检查https://chocolatey.org/install.ps1以确保安全。我们已经知道它是安全的，但是您应该从您不熟悉的Internet 验证任何脚本的安全性和内容。所有这些脚本都下载一个远程PowerShell脚本并在您的计算机上执行。我们非常重视安全性。了解有关我们的安全协议的更多信息。
+使用PowerShell，您必须确保Get-ExecutionPolicy不受限制。我们建议使用Bypass绕过策略来安装东西或AllSigned提高安全性。
+
+运行Get-ExecutionPolicy。如果返回Restricted，则运行Set-ExecutionPolicy AllSigned或Set-ExecutionPolicy Bypass -Scope Process。
+现在运行以下命令：
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+将复制的文本粘贴到您的外壳中，然后按Enter。
+等待几秒钟，命令完成。
+如果没有看到任何错误，则可以使用Chocolatey！键入choco或choco -?现在，或参见使用入门以获取使用说明。
